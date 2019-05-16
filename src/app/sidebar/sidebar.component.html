@@ -1,0 +1,615 @@
+
+<head>
+
+  </head>
+
+
+
+    <body class="light " >
+  
+<aside class="main-sidebar fixed offcanvas shadow" data-toggle='offcanvas'>
+  <section class="sidebar">
+      <div class="w-80px mt-3 mb-3 ml-3">
+          <img src="/assets/img/basic/ingram-logo.png" alt="">
+      </div>
+      <div class="relative">
+          <a data-toggle="collapse" href="#userSettingsCollapse" role="button" aria-expanded="false"
+             aria-controls="userSettingsCollapse" class="btn-fab btn-fab-sm absolute fab-right-bottom fab-top btn-primary shadow1 ">
+              <i class="icon icon-cogs"></i>
+          </a>
+          <div class="user-panel p-3 light mb-2">
+              <div>
+                  <div class="float-left image">
+                      <img class="user_avatar" src="/assets/img/dummy/u2.png" alt="User Image">
+                  </div>
+                  <div class="float-left info">
+                      <h6 class="font-weight-light mt-2 mb-1">Admin Name</h6>
+                      <a href="#"><i class="icon-circle text-primary blink"></i> Online</a>
+                  </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="collapse multi-collapse" id="userSettingsCollapse">
+                  <div class="list-group mt-3 shadow">
+                      <a href="index.html" class="list-group-item list-group-item-action ">
+                          <i class="mr-2 icon-umbrella text-blue"></i>Profile
+                      </a>
+                      <a href="#" class="list-group-item list-group-item-action"><i
+                              class="mr-2 icon-cogs text-yellow"></i>Settings</a>
+                      <a href="#" class="list-group-item list-group-item-action"><i
+                              class="mr-2 icon-security text-purple"></i>Change Password</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <ul class="sidebar-menu custom-sidebar-menu-mobile">
+              <li class="treeview"><a href="/dashboard">
+                  <i class="icon icon-home2 text-lime s-18"></i> <span id="custom-span">Dashboard</span> 
+              </a>
+                 
+              </li>
+              <!-- <li class="treeview"><a href="#">
+                  <i class="icon icon icon-dashboard2 blue-text s-18"></i>
+                  <span id="custom-span">Dashboard</span>
+                  <i
+                      class="icon icon-angle-left s-18 pull-right"></i>
+              </a>
+                  <ul class="treeview-menu">
+                      <li><a href="/dashboardregional"><i class="icon icon-circle-o"></i>Dashboard-Regional</a>
+                      </li>
+                      <li><a href="/dashboardcountry"><i class="icon icon-circle-o"></i>Dashboard-Country</a>
+                      </li>
+                  </ul>
+              </li> -->
+              <li class="treeview"><a href="#"><i class="icon icon-group_work text-blue s-18"></i> Partner
+                <i
+                      class="icon icon-angle-left s-18 pull-right"></i></a>
+                  <ul class="treeview-menu">
+                      <li><a href="/partners"><i class="icon icon-circle-o"></i>Management</a>
+                      </li>
+                      <!-- <li><a href="/partnersummary"><i class="icon icon-circle-o"></i>Summary</a>
+                      </li>
+                      <li><a href="/partnerprofile"><i class="icon icon-circle-o"></i>Profile</a>
+                      </li> -->
+                      <li><a href="/partnercontact"><i class="icon icon-circle-o"></i>Contact</a>
+                      </li>
+                      <li><a class="custom-a"><i class="icon icon-circle-o"></i>Leads Assigned</a>
+                      </li>
+                      <!-- <li><a href="#"><i class="icon icon-circle-o"></i>Cloud Awesomeness</a>
+                      </li>
+                      <li><a href="#"><i class="icon icon-circle-o"></i>Business Plan</a>
+                      </li>
+                     
+                      <li><a href="#"><i class="icon icon-circle-o"></i>Task</a>
+                      </li> -->
+                  </ul>
+              </li>
+              <li class="treeview"><a href="/leads">
+                <i class="icon icon-user amber-text s-18 custom-icon-user" ></i> <span id="custom-span"> Leads</span> 
+            </a>
+               
+            </li>
+
+            <li class="treeview"><a href="#"><i class="icon icon-shop2 purple-text s-18"></i> Vendor Management<i
+                class="icon icon-angle-left s-18 pull-right"></i></a>
+                <ul class="treeview-menu ">
+                    <li><a  href="/vendors"><i class="icon icon-circle-o"></i>Vendors</a>
+                        <!-- <ul class="treeview-menu">
+                                <li><a class="custom-a"><i class="icon icon-add"></i>Add Products</a></li>
+                                <li><a class="custom-a"><i class="icon icon-add"></i>Add Levels</a></li>
+                        </ul> -->
+                    </li>
+                    <li><a href="/vendortype" class="custom-a"><i class="icon icon-circle-o"></i>Vendor Type</a>
+                    </li>
+                </ul>
+              </li>
+
+            <li class="treeview"><a href="#"><i class="icon icon-settings2 light-green-text s-18"></i>Settings<i
+                class="icon icon-angle-left s-18 pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a  href="/addregion"><i class="icon icon-circle-o"></i>Regions</a>
+                    </li>
+                    <li><a href="/alladmin"><i class="icon icon-add"></i>Users</a>
+                    </li>
+                    <li><a href="/addpermission"><i class="icon icon-circle-o"></i>Permission</a>
+                    </li>
+                </ul>
+              </li>
+
+              <li class="treeview"><a href="#"><i class="icon icon-document-table2 pink-text s-18"></i>Reports<i
+                class="icon icon-angle-left s-18 pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a class="custom-a"><i class="icon icon-circle-o"></i>Partners</a>
+                    </li>
+                    <li><a class="custom-a"><i class="icon icon-add"></i>Leads</a>
+                    </li>
+                    <li><a class="custom-a"><i class="icon icon-circle-o"></i>Contacts</a>
+                    </li>
+                </ul>
+              </li>
+
+
+
+
+              <!-- <li class="treeview"><a href="#"><i class="icon icon-users light-blue-text s-18"></i> Users<i
+                class="icon icon-angle-left s-18 pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="/alladmin"><i class="icon icon-circle-o"></i>All Users</a>
+                    </li>
+                    <li><a href="/addadmin"><i class="icon icon-add"></i>Add User</a>
+                    </li>
+                    <li><a href="/addpermission"><i class="icon icon-circle-o"></i>Add Permission</a>
+                    </li>
+                    <li><a href="#"><i class="icon icon-user"></i>User Profile </a>
+                    </li>
+                </ul>
+              </li> -->
+     
+              <!-- <li class="treeview no-b"><a >
+                  <i class="icon icon-document-information2 aqua-text s-18"></i>
+                  <span id="custom-span">Initiatives</span>
+                  
+              </a>
+                
+              </li> -->
+             
+             
+              <li class="treeview no-b"><a >
+                  <i class="icon icon-message blue-text s-18"></i>
+                  <span id="custom-span">Messaging Center</span>
+              </a>
+              </li>
+          </ul>
+
+          <ul class="sidebar-menu custom-sidebar-menu-web">
+            <li class="treeview custom-dashboard-color-menu"><a [routerLink]="['/dashboard']">
+                <i class="icon icon-home2 text-lime s-18"></i> <span id="custom-span">Dashboard</span> 
+            </a>
+               
+            </li>
+            <!-- <li class="treeview"><a href="#">
+                <i class="icon icon icon-dashboard2 blue-text s-18"></i>
+                <span id="custom-span">Dashboard</span>
+                <i
+                    class="icon icon-angle-left s-18 pull-right"></i>
+            </a>
+                <ul class="treeview-menu">
+                    <li><a [routerLink]="['/dashboardregional']"><i class="icon icon-circle-o"></i>Dashboard-Regional</a>
+                    </li>
+                    <li><a [routerLink]="['/dashboardcountry']"><i class="icon icon-circle-o"></i>Dashboard-Country</a>
+                    </li>
+                </ul>
+            </li> -->
+            <li class="treeview"><a href="#"><i class="icon icon-group_work text-blue s-18"></i> Partner
+              <i
+                    class="icon icon-angle-left s-18 pull-right"></i></a>
+                <ul class="treeview-menu custom-partners-menu">
+                    <li class="custom-management-color-menu"><a [routerLink]="['/partners']"><i class="icon icon-circle-o"></i>Management</a>
+                    </li>
+                    <!-- <li><a [routerLink] = "['/partnersummary']"><i class="icon icon-circle-o"></i>Summary</a>
+                    </li>
+                    <li><a [routerLink] = "['/partnerprofile']"><i class="icon icon-circle-o"></i>Profile</a>
+                    </li> -->
+                    <li class="custom-contact-color-menu"><a [routerLink] = "['/partnercontact']"><i class="icon icon-circle-o"></i>Contact</a>
+                    </li>
+                    <li ><a class="custom-a"><i class="icon icon-circle-o"></i>Leads Assigned</a>
+                    </li>
+                    <!-- <li><a href="#"><i class="icon icon-circle-o"></i>Cloud Awesomeness</a>
+                    </li>
+                    <li><a href="#"><i class="icon icon-circle-o"></i>Business Plan</a>
+                    </li>
+                   
+                    <li><a href="#"><i class="icon icon-circle-o"></i>Task</a>
+                    </li> -->
+                </ul>
+            </li>
+            <li class="treeview custom-leads-color-menu"><a [routerLink]="['/leads']">
+                <i class="icon icon-user amber-text s-18 custom-icon-user"></i> <span id="custom-span"> Leads</span> 
+            </a>
+               
+            </li>
+
+            <li class="treeview" ><a href="#"><i class="icon icon-handshake purple-text s-18"></i> Vendor Management<i
+                class="icon icon-angle-left s-18 pull-right"></i></a>
+                <ul class="treeview-menu custom-vendor-menu " >
+                    <li class="custom-vendor-color-menu"><a [routerLink]="['/vendors']"><i class="icon icon-circle-o"></i>Vendors</a>
+                        <!-- <ul class="treeview-menu">
+                                <li><a class="custom-a"><i class="icon icon-circle-o"></i>Add Products</a></li>
+                                <li><a class="custom-a"><i class="icon icon-circle-o"></i>Add Levels</a></li>
+                        </ul> -->
+                    </li>
+                    <li class="custom-vendortype-color-menu"><a [routerLink]="['/vendortype']"><i class="icon icon-circle-o"></i>Vendor Types</a>
+                    </li>
+                </ul>
+              </li>
+
+            <li class="treeview"><a href="#"><i class="icon icon-settings2 light-green-text s-18"></i> Settings<i
+                class="icon icon-angle-left s-18 pull-right"></i></a>
+                <ul class="treeview-menu custom-settings-menu">
+                    <li class="custom-addregion-color-menu"><a [routerLink]="['/addregion']"><i class="icon icon-circle-o"></i>Regions</a>
+                    </li>
+                    <li class="custom-alladmin-color-menu"><a [routerLink]="['/alladmin']"><i class="icon icon-add"></i>Users</a>
+                    </li>
+                    <li class="custom-addpermission-color-menu"><a [routerLink]="['/addpermission']"><i class="icon icon-circle-o"></i>Permission</a>
+                    </li>
+                    <!-- <li><a href="#"><i class="icon icon-user"></i>User Profile </a>
+                    </li> -->
+                </ul>
+              </li>
+
+              <li class="treeview"><a href="#"><i class="icon icon-document-table2 pink-text s-18"></i> Reports<i
+                class="icon icon-angle-left s-18 pull-right"></i></a>
+                <ul class="treeview-menu custom-reports-menu">
+                    <li><a class="custom-a"><i class="icon icon-circle-o"></i>Partner</a>
+                    </li>
+                    <li><a class="custom-a"><i class="icon icon-add"></i>Leads</a>
+                    </li>
+                    <li><a class="custom-a"><i class="icon icon-circle-o"></i>Contacts</a>
+                    </li>
+                    <!-- <li><a href="#"><i class="icon icon-user"></i>User Profile </a>
+                    </li> -->
+                </ul>
+              </li>
+
+
+
+
+            <!-- <li class="treeview"><a href="#"><i class="icon icon-users light-blue-text s-18"></i> Users<i
+              class="icon icon-angle-left s-18 pull-right"></i></a>
+              <ul class="treeview-menu">
+                  <li><a [routerLink]="['/alladmin']"><i class="icon icon-circle-o"></i>All Users</a>
+                  </li>
+                  <li><a [routerLink]="['/addadmin']"><i class="icon icon-add"></i>Add User</a>
+                  </li>
+                  <li><a [routerLink]="['/addpermission']"><i class="icon icon-circle-o"></i>Add Permission</a>
+                  </li>
+                  <li><a href="#"><i class="icon icon-user"></i>User Profile </a>
+                  </li>
+              </ul>
+            </li> -->
+      
+            <!-- <li class="treeview no-b"><a >
+                <i class="icon icon-document-information2 aqua-text s-18"></i>
+                <span id="custom-span">Initiatives</span>
+                
+            </a>
+              
+            </li> -->
+           
+           
+            <li class="treeview no-b"><a class="custom-a">
+                <i class="icon icon-message blue-text s-18"></i>
+                <span id="custom-span">Messaging Center</span>
+            </a>
+            </li>
+
+            
+        </ul>
+
+
+  </section>
+</aside>
+
+<div class="has-sidebar-left">
+  <div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+      <div class="bg-dark pt-2 pb-2 pl-4 pr-2">
+          <div class="search-bar">
+              <input class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50" type="text"
+                     placeholder="start typing...">
+          </div>
+          <a href="#" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-expanded="false"
+             aria-label="Toggle navigation" class="paper-nav-toggle paper-nav-white active "><i></i></a>
+      </div>
+  </div>
+</div>
+  <div class="sticky">
+      <div class="navbar navbar-expand navbar-dark d-flex justify-content-between bd-navbar blue accent-3">
+          <div class="relative">
+              <a href="#" data-toggle="push-menu" class="paper-nav-toggle pp-nav-toggle">
+                  <i></i>
+              </a>
+          </div>
+          
+<div class="navbar-custom-menu">
+  <ul class="nav navbar-nav">
+      <li class="dropdown custom-dropdown messages-menu">
+          <a href="#" class="nav-link" data-toggle="dropdown">
+                 <i class="icon-notifications"></i>
+                 <span class="badge badge-success badge-mini rounded-circle">4</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right custom-dropdown-menu">
+              <li>
+                  <ul class="menu pl-2 pr-2">
+                      <li>
+                          <a href="#">
+                              <div class="avatar float-left">
+                                  <img src="assets/img/dummy/u4.png" alt="">
+                                  <span class="avatar-badge busy"></span>
+                              </div>
+                              <h4>
+                                  Test User1
+                                  <small><i class="icon icon-clock-o"></i> 5 mins</small>
+                              </h4>
+                              <p>Test User1 data to be displayed</p>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#">
+                              <div class="avatar float-left">
+                                  <img src="assets/img/dummy/u1.png" alt="">
+                                  <span class="avatar-badge online"></span>
+                              </div>
+                              <h4>
+                                  Test User2
+                                  <small><i class="icon icon-clock-o"></i> 5 mins</small>
+                              </h4>
+                              <p>Test User2 Data</p>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#">
+                              <div class="avatar float-left">
+                                  <img src="assets/img/dummy/u2.png" alt="">
+                                  <span class="avatar-badge idle"></span>
+                              </div>
+                              <h4>
+                                  Test User3
+                                  <small><i class="icon icon-clock-o"></i> 5 mins</small>
+                              </h4>
+                              <p>Test User3 Data</p>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#">
+                              <div class="avatar float-left">
+                                  <img src="assets/img/dummy/u3.png" alt="">
+                                  <span class="avatar-badge busy"></span>
+                              </div>
+                              <h4>
+                                  Test User4 
+                                  <small><i class="icon icon-clock-o"></i> 5 mins</small>
+                              </h4>
+                              <p>Test User4 Data</p>
+                          </a>
+                      </li>
+                  </ul>
+              </li>
+              <li class="footer s-12 p-2 text-center"><a href="#">See All Messages</a></li>
+          </ul>
+      </li>
+      <li>
+          <a class="nav-link ml-2" data-toggle="control-sidebar">
+              <i class="icon-tasks "></i>
+          </a>
+      </li>
+      <!-- User Account-->
+      <li class="dropdown custom-dropdown user user-menu ">
+          <a href="#" class="nav-link" data-toggle="dropdown">
+              <img src="assets/img/dummy/u8.png" class="user-image" alt="User Image">
+              <i class="icon-more_vert "></i>
+          </a>
+          <div class="dropdown-menu p-4 dropdown-menu-right">
+              <div class="row box justify-content-between my-4">
+                  <div class="col">
+                      <a href="#">
+                          <i class="icon-apps purple lighten-2 avatar  r-5"></i>
+                          <div class="pt-1">Apps</div>
+                      </a>
+                  </div>
+                  <div class="col"><a href="#">
+                      <i class="icon-beach_access pink lighten-1 avatar  r-5"></i>
+                      <div class="pt-1">Profile</div>
+                  </a></div>
+                  <div class="col">
+                      <a href="#">
+                          <i class="icon-perm_data_setting indigo lighten-2 avatar  r-5"></i>
+                          <div class="pt-1">Settings</div>
+                      </a>
+                  </div>
+              </div>
+              <div class="row box justify-content-between my-4">
+                  <div class="col">
+                      <a href="#">
+                          <i class="icon-star light-green lighten-1 avatar  r-5"></i>
+                          <div class="pt-1">Favourites</div>
+                      </a>
+                  </div>
+                  <div class="col">
+                      <a href="#">
+                          <i class="icon-save2 orange accent-1 avatar  r-5"></i>
+                          <div class="pt-1">Saved</div>
+                      </a>
+                  </div>
+                  <div class="col">
+                      <a href="#">
+                          <i class="icon-perm_data_setting grey darken-3 avatar  r-5"></i>
+                          <div class="pt-1">Settings</div>
+                      </a>
+                  </div>
+              </div>
+              <hr>
+              <div class="row box justify-content-between my-4">
+                  <div class="col">
+                      <a href="#">
+                          <i class="icon-apps purple lighten-2 avatar  r-5"></i>
+                          <div class="pt-1">Apps</div>
+                      </a>
+                  </div>
+                  <div class="col"><a href="#">
+                      <i class="icon-beach_access pink lighten-1 avatar  r-5"></i>
+                      <div class="pt-1">Profile</div>
+                  </a></div>
+                  <div class="col">
+                      <a href="#">
+                          <i class="icon-perm_data_setting indigo lighten-2 avatar  r-5"></i>
+                          <div class="pt-1">Settings</div>
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </li>
+  </ul>
+</div>
+      </div>
+  </div>
+</div>
+
+
+
+
+<aside class="control-sidebar fixed white ">
+  <div class="slimScroll">
+      <div class="sidebar-header">
+          <h4>Activity List</h4>
+          <a href="#" data-toggle="control-sidebar" class="paper-nav-toggle  active"><i></i></a>
+      </div>
+      <div class="p-3">
+          <div>
+              <div class="my-3">
+                  <small>25% Complete</small>
+                  <div class="progress" style="height: 3px;">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                           aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+              </div>
+              <div class="my-3">
+                  <small>45% Complete</small>
+                  <div class="progress" style="height: 3px;">
+                      <div class="progress-bar bg-info" role="progressbar" style="width: 45%;" aria-valuenow="45"
+                           aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+              </div>
+              <div class="my-3">
+                  <small>60% Complete</small>
+                  `
+                  <div class="progress" style="height: 3px;">
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: 60%;" aria-valuenow="60"
+                           aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+              </div>
+              <div class="my-3">
+                  <small>75% Complete</small>
+                  <div class="progress" style="height: 3px;">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 75%;" aria-valuenow="75"
+                           aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+              </div>
+              <div class="my-3">
+                  <small>100% Complete</small>
+                  <div class="progress" style="height: 3px;">
+                      <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100"
+                           aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="p-3 bg-primary text-white">
+          <div class="row">
+              <div class="col-md-6">
+                  <h5 class="font-weight-normal s-14">Sodium</h5>
+                  <span class="font-weight-lighter text-primary">Spark Bar</span>
+                  <div> Oxygen
+                      <span class="text-primary">
+                                                  <i class="icon icon-arrow_downward"></i> 67%</span>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <canvas width="100" height="70" data-chart="spark" data-chart-type="bar"
+                          data-dataset="[[28,68,41,43,96,45,100,28,68,41,43,96,45,100,28,68,41,43,96,45,100,28,68,41,43,96,45,100]]"
+                          data-labels="['a','b','c','d','e','f','g','h','i','j','k','l','m','n','a','b','c','d','e','f','g','h','i','j','k','l','m','n']">
+                  </canvas>
+              </div>
+          </div>
+      </div>
+      <div class="table-responsive">
+          <table id="recent-orders" class="table table-hover mb-0 ps-container ps-theme-default">
+              <tbody>
+              <tr>
+                  <td>
+                      <a href="#">INV-281281</a>
+                  </td>
+                  <td>
+                      <span class="badge badge-success">Paid</span>
+                  </td>
+                  <td>$ 1228.28</td>
+              </tr>
+              <tr>
+                  <td>
+                      <a href="#">INV-01112</a>
+                  </td>
+                  <td>
+                      <span class="badge badge-warning">Overdue</span>
+                  </td>
+                  <td>$ 5685.28</td>
+              </tr>
+              <tr>
+                  <td>
+                      <a href="#">INV-281012</a>
+                  </td>
+                  <td>
+                      <span class="badge badge-success">Paid</span>
+                  </td>
+                  <td>$ 152.28</td>
+              </tr>
+              <tr>
+                  <td>
+                      <a href="#">INV-01112</a>
+                  </td>
+                  <td>
+                      <span class="badge badge-warning">Overdue</span>
+                  </td>
+                  <td>$ 5685.28</td>
+              </tr>
+              <tr>
+                  <td>
+                      <a href="#">INV-281012</a>
+                  </td>
+                  <td>
+                      <span class="badge badge-success">Paid</span>
+                  </td>
+                  <td>$ 152.28</td>
+              </tr>
+              </tbody>
+          </table>
+      </div>
+      <div class="sidebar-header">
+          <h4>Activity</h4>
+          <a href="#" data-toggle="control-sidebar" class="paper-nav-toggle  active"><i></i></a>
+      </div>
+      <div class="p-4">
+          <div class="activity-item activity-primary">
+              <div class="activity-content">
+                  <small class="text-muted">
+                      <i class="icon icon-user position-left"></i> 5 mins ago
+                  </small>
+                  <p>Lorem ipsum dolor sit amet conse ctetur which ascing elit users.</p>
+              </div>
+          </div>
+          <div class="activity-item activity-danger">
+              <div class="activity-content">
+                  <small class="text-muted">
+                      <i class="icon icon-user position-left"></i> 8 mins ago
+                  </small>
+                  <p>Lorem ipsum dolor sit ametcon the sectetur that ascing elit users.</p>
+              </div>
+          </div>
+          <div class="activity-item activity-success">
+              <div class="activity-content">
+                  <small class="text-muted">
+                      <i class="icon icon-user position-left"></i> 10 mins ago
+                  </small>
+                  <p>Lorem ipsum dolor sit amet cons the ecte tur and adip ascing elit users.</p>
+              </div>
+          </div>
+          <div class="activity-item activity-warning">
+              <div class="activity-content">
+                  <small class="text-muted">
+                      <i class="icon icon-user position-left"></i> 12 mins ago
+                  </small>
+                  <p>Lorem ipsum dolor sit amet consec tetur adip ascing elit users.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</aside>
+</body>

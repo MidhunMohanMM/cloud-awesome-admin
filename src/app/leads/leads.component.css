@@ -1,0 +1,103 @@
+.btn1:focus {
+    background: #ccc;
+} 
+.custom-container-fluid{
+    padding-left:0px;
+}
+
+.custom-col-12{
+    padding-left:0px;
+}
+
+@media only screen and (max-width: 928px) {
+    #custom-date{
+        display:none;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1192px){
+    #custom-date{
+        display:none;
+    }
+}
+
+#custom-heading{
+    width:50%;
+}
+
+
+.custom-list-unstyled{
+    cursor: pointer;
+}
+
+.row{
+    margin-left:0px;
+    margin-right:0px;
+}
+
+
+
+.btn-fab.btn-fab-sm {
+    line-height: 27px;
+}
+
+.edit-input {
+    display:none;
+}
+
+
+.custom-a{
+    cursor: pointer;
+    margin-left:10px;
+    color:#03a9f4!important;
+}
+
+.custom-card{
+    padding-left:10px;
+}
+
+/* .custom-row{
+    padding-top: 13px;
+} */
+
+.custom-btn-fab{
+    margin-right:20px;
+    margin-top:17px;
+}
+
+.custom-card{
+    margin-top:12px;
+}
+
+.custom-checkbox-nav-item{
+    padding-top: 14px;
+    padding-left: 40px;
+}
+
+.custom-checkbox{
+    padding-top: 13px;
+}
+
+.custom-nav-all-leads > li:last-child
+{
+    right:0;
+    position:absolute
+}
+
+.custom-icon-delete{
+    margin-top: 13px;
+    font-size: 20px;
+}
+
+#scroller {
+    height: 100vh;
+    width: 700px;
+    overflow: scroll;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+   
+  .news {
+    padding: 30px;
+  }

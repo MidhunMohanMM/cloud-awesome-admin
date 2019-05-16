@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <style>
+        .loader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #F5F8FA;
+            z-index: 9998;
+            text-align: center;
+        }
+
+        .plane-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+   </head>
+<body class="light">
+
+ <div id="loader" >
+</div>
+<div id="app">
+    <app-sidebar></app-sidebar>
+    <div class="page  has-sidebar-left height-full">
+        <header class="blue accent-3 relative">
+            <div class="container-fluid text-white">
+                <div class="row p-t-b-10 ">
+                    <div class="col">
+                        <h4>
+                            <i class="icon-globe"></i>
+                            Dashboard - Regional
+                        </h4>
+                    </div>
+                </div>
+                <div class="row justify-content-between">
+                    <ul class="nav nav-material nav-material-white responsive-tab" id="v-pills-tab" role="tablist">
+                        <li>
+                            <a class="nav-link active" id="v-pills-regional-tab" data-toggle="pill" href="#v-pills-regional"
+                                role="tab" aria-controls="v-pills-regional"><i class="icon icon-globe"></i>Dashboard - Regional</a>
+                        </li>
+                        <li>
+                            <a class="nav-link " id="v-pills-country-tab" data-toggle="pill" href="#v-pills-country" role="tab"
+                                aria-controls="v-pills-country"><i class="icon icon-flag"></i> Dashboard - Country</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="content-wrapper animatedParent animateOnce">
+        <div class="tab-content my-3" id="v-pills-tabContent">
+                <div class="tab-pane animated show active" id="v-pills-regional" role="tabpanel" aria-labelledby="v-pills-regional-tab">
+                <div class="container">
+                    <section class="paper-card">
+                        <div class="row" >
+                            <div class="col-lg-5">
+                                <div class="box">
+                                    <div class="box-header with-border">
+                                        <h3 class="box-title">Sign Up and Profile</h3>
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <div class="box-body table-responsive">
+                                        <table class="table table-bordered table-hover ">
+                                            <tbody>
+                                            <tr id="custom-tr">
+                                                <!-- <th style="width: 10px">#</th> -->
+                                                <th>Country</th>
+                                                <th>Sign Ups</th>
+                                                <th >Profile Completed</th>
+                                            </tr>
+                                            <tr>
+                                                <!-- <td>1.</td> -->
+                                                <td>Gulf</td>
+                                                <td>50</td>
+                                                <td>15</td>
+                                        
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td>Saudi Arabia</td>
+                                                <td>40</td>
+                                                <td>10</td>
+                                        
+                                            </tr>
+                                            <tr>
+                                            
+                                                <td>Egypt</td>
+                                                <td>30</td>
+                                                <td>10</td>
+                                        
+                                            </tr>
+                                            <tr>
+                                            
+                                                <td>Turkey</td>
+                                                <td>50</td>
+                                                <td>12</td>
+                                        
+                                            </tr>
+                                            <tr>
+                                            
+                                                <td>Levant</td>
+                                                <td>20</td>
+                                                <td>5</td>
+                                        
+                                            </tr>
+                                            <tr>
+                                            
+                                                <td>Morocco</td>
+                                                <td>30</td>
+                                                <td>9</td>
+                                        
+                                            </tr>
+                                            <tr>
+                                            
+                                                <td>South Africa</td>
+                                                <td>30</td>
+                                                <td>10</td>
+                                        
+                                            </tr>
+                                            <tr>
+                                            
+                                                <td>Pakistan</td>
+                                                <td>10</td>
+                                                <td>5</td>
+                                        
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.box-body -->
+                                    <div class="box-footer clearfix">
+                                        <ul class="pagination pagination-sm no-margin float-right">
+                                            <li class="page-item"><a href="#" class="page-link">&#xAB;</a>
+                                            </li>
+                                            <li class="page-item"><a href="#" class="page-link">1</a>
+                                            </li>
+                                            <li class="page-item"><a href="#" class="page-link">2</a>
+                                            </li>
+                                            <li class="page-item"><a href="#" class="page-link">3</a>
+                                            </li>
+                                            <li class="page-item"><a href="#" class="page-link">&#xBB;</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="box">
+                                    <div class="box-header with-border">
+                                        <h3 class="box-title">Cloud Awesomeness Dashboard</h3>
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <div class="box-body table-responsive">
+                                        <table class="table table-bordered table-hover ">
+                                            <tbody>
+                                            <tr id="custom-tr">
+                                                <!-- <th style="width: 10px">#</th> -->
+                                                <th>Country</th>
+                                                <th>Sign Ups</th>
+                                                <th>Getting Started</th>
+                                                <th>Build</th>
+                                                <th>Breadth</th>
+                                                <th>Depth</th>
+                                                <th>Scale</th>
+                                                <!-- <th style="width: 40px">Profile Completed</th> -->
+                                            </tr>
+                                            <tr>
+                                                <!-- <td>1.</td> -->
+                                                <td>Gulf</td>
+                                                <td>50</td>
+                                                <td>15</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>    
+                                                <td></td>
+                                        
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td>Saudi Arabia</td>
+                                                <td>40</td>
+                                                <td>10</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>    
+                                                <td></td>
+                                        
+                                            </tr>
+                                            <tr>
+                                            
+                                                <td>Egypt</td>
+                                                <td>30</td>
+                                                <td>10</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>    
+                                                <td></td>
+                                        
+                                            </tr>
+                                            <tr>
+                                            
+                                                <td>Turkey</td>
+                                                <td>50</td>
+                                                <td>12</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>    
+                                                <td></td>
+                                        
+                                            </tr>
+                                            <tr>
+                                            
+                                                <td>Levant</td>
+                                                <td>20</td>
+                                                <td>5</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>    
+                                                <td></td>
+                                        
+                                            </tr>
+                                            <tr>
+                                            
+                                                <td>Morocco</td>
+                                                <td>30</td>
+                                                <td>9</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>    
+                                                <td></td>
+                                        
+                                            </tr>
+                                            <tr>
+                                            
+                                                <td>South Africa</td>
+                                                <td>30</td>
+                                                <td>10</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>    
+                                                <td></td>
+                                        
+                                            </tr>
+                                            <tr>
+                                            
+                                                <td>Pakistan</td>
+                                                <td>10</td>
+                                                <td>5</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>    
+                                                <td></td>
+                                        
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.box-body -->
+                                    <div class="box-footer clearfix">
+                                        <ul class="pagination pagination-sm no-margin float-right">
+                                            <li class="page-item"><a href="#" class="page-link">&#xAB;</a>
+                                            </li>
+                                            <li class="page-item"><a href="#" class="page-link">1</a>
+                                            </li>
+                                            <li class="page-item"><a href="#" class="page-link">2</a>
+                                            </li>
+                                            <li class="page-item"><a href="#" class="page-link">3</a>
+                                            </li>
+                                            <li class="page-item"><a href="#" class="page-link">&#xBB;</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <angular-d3-donut [id]="donutChartId" [data]="donutChartData"></angular-d3-donut>    -->
+                        <!-- <div>
+                            <h3 class="box-title text-center" style="margin-bottom:45px;" >Type of Partners</h3>
+                        <angular-d3-pie [id]="pieChartId" [data]="pieChartData" [outerRadius]="150" class="text-center float-right"></angular-d3-pie>   
+                           
+                        <h3 class="box-title text-center align-middle" style="margin-top:451px;margin-bottom:72px">Partner Count by Vendors (Top 10)</h3>
+                        <angular-d3-bar  [id]="test2" [data]="barChartData" [dataColumns]="dataColumns" class="text-center " [colors]="colors" [yAxisTicks]=10 [width]=400 [height]=200 [transitionDuration]=1000 [transitionDelay]=30 [barWidth]="'16px'"></angular-d3-bar>
+                        
+                    </div> -->
+                    
+                    </section>
+                </div>
+                </div>
+
+                <div class="tab-pane animated" id="v-pills-country" role="tabpanel" aria-labelledby="v-pills-country-tab">
+                        <div class="container">
+                                <section class="paper-card">
+                                    <div class="row" >
+                                        <div class="col-lg-5">
+                                            <div class="box">
+                                                <div class="box-header with-border">
+                                                    <h3 class="box-title">Sign Up and Profile</h3>
+                                                </div>
+                                                <!-- /.box-header -->
+                                                <div class="box-body table-responsive">
+                                                    <table class="table table-bordered table-hover ">
+                                                        <tbody>
+                                                        <tr id="custom-tr">
+                                                            <!-- <th style="width: 10px">#</th> -->
+                                                            <th>Country</th>
+                                                            <th>Sign Ups</th>
+                                                            <th >Profile Completed</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <!-- <td>1.</td> -->
+                                                            <td>Gulf</td>
+                                                            <td>50</td>
+                                                            <td>15</td>
+                                                    
+                                                        </tr>
+                                                        <tr>
+                                                            
+                                                            <td>Saudi Arabia</td>
+                                                            <td>40</td>
+                                                            <td>10</td>
+                                                    
+                                                        </tr>
+                                                        <tr>
+                                                        
+                                                            <td>Egypt</td>
+                                                            <td>30</td>
+                                                            <td>10</td>
+                                                    
+                                                        </tr>
+                                                        <tr>
+                                                        
+                                                            <td>Turkey</td>
+                                                            <td>50</td>
+                                                            <td>12</td>
+                                                    
+                                                        </tr>
+                                                        <tr>
+                                                        
+                                                            <td>Levant</td>
+                                                            <td>20</td>
+                                                            <td>5</td>
+                                                    
+                                                        </tr>
+                                                        <tr>
+                                                        
+                                                            <td>Morocco</td>
+                                                            <td>30</td>
+                                                            <td>9</td>
+                                                    
+                                                        </tr>
+                                                        <tr>
+                                                        
+                                                            <td>South Africa</td>
+                                                            <td>30</td>
+                                                            <td>10</td>
+                                                    
+                                                        </tr>
+                                                        <tr>
+                                                        
+                                                            <td>Pakistan</td>
+                                                            <td>10</td>
+                                                            <td>5</td>
+                                                    
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- /.box-body -->
+                                                <div class="box-footer clearfix">
+                                                    <ul class="pagination pagination-sm no-margin float-right">
+                                                        <li class="page-item"><a href="#" class="page-link">&#xAB;</a>
+                                                        </li>
+                                                        <li class="page-item"><a href="#" class="page-link">1</a>
+                                                        </li>
+                                                        <li class="page-item"><a href="#" class="page-link">2</a>
+                                                        </li>
+                                                        <li class="page-item"><a href="#" class="page-link">3</a>
+                                                        </li>
+                                                        <li class="page-item"><a href="#" class="page-link">&#xBB;</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <div class="box">
+                                                <div class="box-header with-border">
+                                                    <h3 class="box-title">Cloud Awesomeness Dashboard</h3>
+                                                </div>
+                                                <!-- /.box-header -->
+                                                <div class="box-body table-responsive">
+                                                    <table class="table table-bordered table-hover ">
+                                                        <tbody>
+                                                        <tr id="custom-tr">
+                                                            <!-- <th style="width: 10px">#</th> -->
+                                                            <th>Country</th>
+                                                            <th>Sign Ups</th>
+                                                            <th>Getting Started</th>
+                                                            <th>Build</th>
+                                                            <th>Breadth</th>
+                                                            <th>Depth</th>
+                                                            <th>Scale</th>
+                                                            <!-- <th style="width: 40px">Profile Completed</th> -->
+                                                        </tr>
+                                                        <tr>
+                                                            <!-- <td>1.</td> -->
+                                                            <td>Gulf</td>
+                                                            <td>50</td>
+                                                            <td>15</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>    
+                                                            <td></td>
+                                                    
+                                                        </tr>
+                                                        <tr>
+                                                            
+                                                            <td>Saudi Arabia</td>
+                                                            <td>40</td>
+                                                            <td>10</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>    
+                                                            <td></td>
+                                                    
+                                                        </tr>
+                                                        <tr>
+                                                        
+                                                            <td>Egypt</td>
+                                                            <td>30</td>
+                                                            <td>10</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>    
+                                                            <td></td>
+                                                    
+                                                        </tr>
+                                                        <tr>
+                                                        
+                                                            <td>Turkey</td>
+                                                            <td>50</td>
+                                                            <td>12</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>    
+                                                            <td></td>
+                                                    
+                                                        </tr>
+                                                        <tr>
+                                                        
+                                                            <td>Levant</td>
+                                                            <td>20</td>
+                                                            <td>5</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>    
+                                                            <td></td>
+                                                    
+                                                        </tr>
+                                                        <tr>
+                                                        
+                                                            <td>Morocco</td>
+                                                            <td>30</td>
+                                                            <td>9</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>    
+                                                            <td></td>
+                                                    
+                                                        </tr>
+                                                        <tr>
+                                                        
+                                                            <td>South Africa</td>
+                                                            <td>30</td>
+                                                            <td>10</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>    
+                                                            <td></td>
+                                                    
+                                                        </tr>
+                                                        <tr>
+                                                        
+                                                            <td>Pakistan</td>
+                                                            <td>10</td>
+                                                            <td>5</td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>    
+                                                            <td></td>
+                                                    
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- /.box-body -->
+                                                <div class="box-footer clearfix">
+                                                    <ul class="pagination pagination-sm no-margin float-right">
+                                                        <li class="page-item"><a href="#" class="page-link">&#xAB;</a>
+                                                        </li>
+                                                        <li class="page-item"><a href="#" class="page-link">1</a>
+                                                        </li>
+                                                        <li class="page-item"><a href="#" class="page-link">2</a>
+                                                        </li>
+                                                        <li class="page-item"><a href="#" class="page-link">3</a>
+                                                        </li>
+                                                        <li class="page-item"><a href="#" class="page-link">&#xBB;</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <angular-d3-donut [id]="donutChartId" [data]="donutChartData"></angular-d3-donut>    -->
+                                    <!-- <div>
+                                        <h3 class="box-title text-center" style="margin-bottom:45px;" >Type of Partners</h3>
+                                    <angular-d3-pie [id]="pieChartId" [data]="pieChartData" [outerRadius]="150" class="text-center float-right"></angular-d3-pie>   
+                                       
+                                    <h3 class="box-title text-center align-middle" style="margin-top:451px;margin-bottom:72px">Partner Count by Vendors (Top 10)</h3>
+                                    <angular-d3-bar  [id]="test2" [data]="barChartData" [dataColumns]="dataColumns" class="text-center " [colors]="colors" [yAxisTicks]=10 [width]=400 [height]=200 [transitionDuration]=1000 [transitionDelay]=30 [barWidth]="'16px'"></angular-d3-bar>
+                                    
+                                </div> -->
+                                </section>
+                            </div>
+
+
+                        </div>
+
+
+                </div>
+            </div>
+    </div>
+</div>
+
+</body>
+</html>

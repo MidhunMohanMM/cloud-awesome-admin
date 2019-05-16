@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <style>
+        .loader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #F5F8FA;
+            z-index: 9998;
+            text-align: center;
+        }
+
+        .plane-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+    
+   </head>
+<body class="light">
+
+ <div id="loader" >
+</div>
+<div id="app">
+    <app-sidebar></app-sidebar>
+
+    <div class="page has-sidebar-left height-full">
+      <header class="blue accent-3 relative nav-sticky">
+          <div class="container-fluid text-white">
+              <div class="row p-t-b-10 ">
+                  <div class="col">
+                      <h4>
+                          <i class="icon-box"></i>
+                          Vendors
+                      </h4>
+
+                  </div>
+                          <!-- <a class="nav-link " [routerLink]="['/partners']" href="#v-pills-settings"  ><i class="icon icon-select_all"></i> Add New Vendor</a> -->
+                      <!-- </li> -->
+                  <!-- </ul> -->
+              </div>
+              <div class="row justify-content-between">
+                  <ul class="nav nav-material nav-material-white responsive-tab" id="v-pills-tab" role="tablist">
+                      <li>
+                          <a class="nav-link active" id="v-pills-all-tab" data-toggle="pill" href="#v-pills-all"
+                             role="tab" aria-controls="v-pills-all"><i class="icon icon-home2"></i>All Vendors</a>
+                      </li>
+                      <li>
+                          <a class="nav-link" id="v-pills-newvendor-tab" data-toggle="pill" href="#v-pills-newvendor" role="tab"
+                             aria-controls="v-pills-newvendor"><i class="icon icon-face"></i> Add New Vendor</a>
+                      </li>
+                     <!-- <li>
+                          <a class="nav-link" id="v-pills-products-tab" data-toggle="pill" href="#v-pills-products" role="tab"
+                             aria-controls="v-pills-products"><i class="icon icon-contacts"></i> Add Products</a>
+                      </li>
+                      <li>
+                          <a class="nav-link" id="v-pills-levels-tab" data-toggle="pill" href="#v-pills-levels" role="tab"
+                             aria-controls="v-pills-levels"><i class="icon icon-cloud"></i> Add Levels</a>
+                      </li> -->
+                     <!--   <li>
+                          <a class="nav-link" id="v-pills-sellers-tab" data-toggle="pill" href="#v-pills-sellers" role="tab"
+                             aria-controls="v-pills-sellers"><i class="icon  icon-business_center"></i> Business Plan</a>
+                      </li>
+                      <li>
+                          <a class="nav-link" id="v-pills-sellers-tab" data-toggle="pill" href="#v-pills-sellers" role="tab"
+                             aria-controls="v-pills-sellers"><i class="icon  icon-user"></i>Leads</a>
+                      </li>
+                      <li>
+                          <a class="nav-link" id="v-pills-sellers-tab" data-toggle="pill" href="#v-pills-sellers" role="tab"
+                              aria-controls="v-pills-sellers"><i class="icon icon-tasks"></i>Task</a>
+                      </li> -->
+                  </ul>
+              </div>
+          </div>
+      </header>
+      <!-- <div class="container-fluid my-3">
+            <div class="row pb-3">
+                <div class="col-md-7">
+                    <div class="card no-b p-3">
+                        <div class="card-title">
+                            <h4>Profile Completed - 80%</h4>
+                        </div>
+
+                        <easy-pie-chart [percent]="percent" [options]="options"></easy-pie-chart>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        
+        <div class="container-fluid animatedParent ">
+            <div class="tab-content my-3" id="v-pills-tabContent">
+
+                <div class="tab-pane animated  show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">
+                        <div class="box-tools ">
+                                <div class="input-group input-group-sm " >
+                                    <input name="table_search" class="form-control float-right" placeholder="Search"
+                                            type="text">
+                                    <div class="input-group-btn">
+                                        <button type="submit" class="btn btn-primary"><i class="icon-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                    <div class="row my-3">
+                        <div class="col-md-12">
+                            <div class="card r-0 shadow">
+                                <div class="table-responsive">
+                                    <form>                                     
+                                        <table class="table  table-hover r-0" >
+                                            <thead>
+                                            <tr class="no-b">
+                                                <th class="custom-th-checkbox">
+                                                    <div class="custom-control custom-checkbox " id="custom-custom-control">
+                                                        <input type="checkbox" id="checkedAll" class="custom-control-input"><label
+                                                            class="custom-control-label" for="checkedAll"></label>
+                                                    </div>
+                                                </th>
+                                                <th style="width:20%">VENDOR NAME</th>
+                                                <th style="width:20%">VENDOR TYPE</th>
+                                                <!-- <th>LAST NAME</th> -->
+                                                <!-- <th>INCOME</th> -->
+                                          
+                                                <th>LARGE/ SMALL VENDOR</th>
+                                                <th>STATUS</th>
+                                                <th></th>
+                                                <!-- <th>OPERATIONS</th> -->
+                                            </tr>
+                                            </thead>     
+                                            <tbody>
+                                                <tr *ngFor = "let vendor of allvendors" >
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input checkSingle"
+                                                                id="{{ vendor.vendorsid}}" required><label
+                                                                class="custom-control-label" for="{{ vendor.vendorsid}}"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td  [routerLink]="['/vendorprofile', vendor.vendorsid]">       
+                                                            <div class="avatar avatar-md mr-3 mt-1 float-left">
+                                                            <span *ngIf="vendor.firstletter == 'A' || vendor.firstletter == 'a'" class="avatar-letter avatar-letter-a avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'B' || vendor.firstletter == 'b'" class="avatar-letter avatar-letter-b avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'C' || vendor.firstletter == 'c'" class="avatar-letter avatar-letter-c avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'D' || vendor.firstletter == 'd'" class="avatar-letter avatar-letter-d avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'E' || vendor.firstletter == 'e'" class="avatar-letter avatar-letter-e avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'F' || vendor.firstletter == 'f'" class="avatar-letter avatar-letter-f avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'G' || vendor.firstletter == 'g'" class="avatar-letter avatar-letter-g avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'H' || vendor.firstletter == 'h'" class="avatar-letter avatar-letter-h avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'I' || vendor.firstletter == 'i'" class="avatar-letter avatar-letter-i avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'J' || vendor.firstletter == 'j'" class="avatar-letter avatar-letter-j avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'K' || vendor.firstletter == 'k'" class="avatar-letter avatar-letter-k avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'L' || vendor.firstletter == 'l'" class="avatar-letter avatar-letter-l avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'M' || vendor.firstletter == 'm'" class="avatar-letter avatar-letter-m avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'N' || vendor.firstletter == 'n'" class="avatar-letter avatar-letter-n avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'O' || vendor.firstletter == 'o'" class="avatar-letter avatar-letter-o avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'P' || vendor.firstletter == 'p'" class="avatar-letter avatar-letter-p avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'Q' || vendor.firstletter == 'q'" class="avatar-letter avatar-letter-q avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'R' || vendor.firstletter == 'r'" class="avatar-letter avatar-letter-r avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'S' || vendor.firstletter == 's'" class="avatar-letter avatar-letter-s avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'T' || vendor.firstletter == 't'" class="avatar-letter avatar-letter-t avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'U' || vendor.firstletter == 'u'" class="avatar-letter avatar-letter-u avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'V' || vendor.firstletter == 'v'" class="avatar-letter avatar-letter-v avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'W' || vendor.firstletter == 'w'" class="avatar-letter avatar-letter-w avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'X' || vendor.firstletter == 'x'" class="avatar-letter avatar-letter-x avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'Y' || vendor.firstletter == 'y'" class="avatar-letter avatar-letter-y avatar-md circle"></span>
+                                                            <span *ngIf="vendor.firstletter == 'Z' || vendor.firstletter == 'z'" class="avatar-letter avatar-letter-z avatar-md circle"></span>
+                                                        </div>
+                                                        <div id="custom-firstname" >
+                                                            <div>
+                                                                <strong >{{ vendor.name | titlecase }}</strong>
+                                                            </div>
+                                                        
+                                                        </div>
+                                                    </td>
+                                                    <td  [routerLink]="['/vendorprofile', vendor.vendorsid]">{{ vendor.vendors_type.name }}</td>
+                                                    <td *ngIf="vendor.islarge == false" [routerLink]="['/vendorprofile', vendor.vendorsid]">Small</td>
+                                                    <td *ngIf="vendor.islarge == true" [routerLink]="['/vendorprofile', vendor.vendorsid]">Large</td>
+                                                    <td *ngIf="vendor.status == '0'" [routerLink]="['/vendorprofile', vendor.vendorsid]">
+                                                        <span class="badge badge-primary">Not Approved</span>
+                                                    </td>
+                                                    <td *ngIf="vendor.status == '1'" [routerLink]="['/vendorprofile', vendor.vendorsid]">
+                                                        <span class="badge badge-success">Approved</span>
+                                                    </td>
+                                                    <td *ngIf="vendor.status == '2'" [routerLink]="['/vendorprofile', vendor.vendorsid]">
+                                                        <span class="badge badge-warning">Pending</span>
+                                                    </td>
+                                                    <td *ngIf="vendor.status == '3'" [routerLink]="['/vendorprofile', vendor.vendorsid]">
+                                                        <span class="badge badge-danger">Rejected</span>
+                                                    </td>
+                                                    <td>
+                                                        <a [routerLink]="['/vendorprofile', vendor.vendorsid]"><i class="icon-eye mr-3"></i></a>
+                                                        <a [routerLink]="['/vendorprofile', vendor.vendorsid]"><i class="icon-pencil"></i></a>
+                                                    </td>
+                                                </tr>
+<!--                                              
+                                                <tr [routerLink]="['/vendorprofile', vendor.vendorsid]">
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input checkSingle"
+                                                                    id="user_id_1" required><label
+                                                                class="custom-control-label" for="user_id_1"></label>
+                                                        </div>
+                                                    </td>
+                                                    <td>          
+                                                            <div class="avatar avatar-md mr-3 mt-1 float-left">
+                                                             <span class="avatar-letter avatar-letter-t  avatar-md circle"></span>
+                                                         </div>
+                                                         <div id="custom-firstname" >
+                                                             <div>
+                                                                 <strong >Test Company</strong>
+                                                             </div>
+                                                         
+                                                         </div>
+                                                     </td>
+                                                     <td >Alexander Pierce</td>           
+                                                    <td>testcompany.co</td>
+                                                    <td>testcompany@mail.com</td>
+                                                
+                                                    <td>+92 333 123 136</td>
+                                                </tr> -->
+                                            </tbody>
+                                        </table>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+      
+                    
+      
+                    <nav class="my-3" aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="tab-pane fade" id="v-pills-newvendor" role="tabpanel" aria-labelledby="v-pills-newvendor-tab">
+                    <div class="animated ">
+                        <div class="row my-3">
+                            <div class="col-md-12 ">
+                                <form action="#">
+                                    <div class="card no-b  no-r">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Add New Vendor</h5>
+                                            <form class="form-material custom-form-material">
+                                                <!-- Input -->
+                                                <div class="body">
+                                                    <div class="row clearfix">
+                                                        <div class="col-sm-4 custom-col-sm-4">
+                                                            <div class="form-group">
+                                                                <div class="form-line" >
+                                                                    <input type="text" class="form-control" name="vendorname"  [(ngModel)] = "vendorname" placeholder="Vendor Name"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-md-4 custom-col-md-4" >
+                                                        <select [(ngModel)] = "vendortypeid" name="vendortypeid" class="custom-select custom-font" required>
+                                                            <option  value disabled>Select type of the Vendor </option>
+                                                            <option  *ngFor = " let vendortype of vendortypes" value="{{vendortype.vendorstypesid}}">{{ vendortype.name }}</option>
+                                                        </select>
+                                                        <div class="invalid-feedback">Example invalid custom select feedback</div>
+                                                    </div>
+                                                    <div class="custom-file col-md-4 custom-col-md-4">
+                                                        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                                        <label  class="custom-file-label custom-font custom-custom-file-label" for="validatedCustomFile">Select Logo...</label>
+                                                        <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                                    </div>
+                                                    
+                                                    <div class="material-switch col-md-5 custom-material-switch">
+                                                            <h5 class="float-left col-md-8 custom-font custom-float-left" >Is this a Large Vendor?</h5>
+                                                            <input [(ngModel)] = "islarge" id="someSwitchOptionDanger" name="someSwitchOption001" type="checkbox"/>
+                                                            <label for="someSwitchOptionDanger" class="bg-primary"></label>
+                                                        </div>
+                                                </div>
+                                            </form> 
+                                        </div>
+                                        <div class="card-body">
+                                            <button type="submit" (click)="addvendor()" class="btn btn-primary btn-lg"><i class="icon-save mr-2"></i>Save Data</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                <!-- <div class="tab-pane animated " id="v-pills-buyers" role="tabpanel" aria-labelledby="v-pills-buyers-tab">
+                    <div class="row">
+                        <div class="col-md-3 my-3">
+                            <div class="card no-b">
+                                <div class="card-body text-center p-5">
+                                    <div class="avatar avatar-xl mb-3">
+                                        <img  src="assets/img/dummy/u1.png" alt="User Image">
+                                    </div>
+                                    <div>
+                                        <h6 class="p-t-10">Alexander Pierce</h6>
+                                        alexander@paper.com
+                                    </div>
+                                    <a href="#" class="btn btn-success btn-sm mt-3">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 my-3">
+                            <div class="card no-b">
+                                <div class="card-body text-center p-5">
+                                    <div class="avatar avatar-xl mb-3">
+                                        <img  src="assets/img/dummy/u2.png" alt="User Image">
+                                    </div>
+                                    <div>
+                                        <h6 class="p-t-10">Alexander Pierce</h6>
+                                        alexander@paper.com
+                                    </div>
+                                    <a href="#" class="btn btn-success btn-sm mt-3">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 my-3">
+                            <div class="card no-b">
+                                <div class="card-body text-center p-5">
+                                    <div class="avatar avatar-xl mb-3">
+                                        <img  src="assets/img/dummy/u4.png" alt="User Image">
+                                    </div>
+                                    <div>
+                                        <h6 class="p-t-10">Alexander Pierce</h6>
+                                        alexander@paper.com
+                                    </div>
+                                    <a href="#" class="btn btn-success btn-sm mt-3">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 my-3">
+                            <div class="card no-b">
+                                <div class="card-body text-center p-5">
+                                    <div class="avatar avatar-xl mb-3">
+                                        <img  src="assets/img/dummy/u5.png" alt="User Image">
+                                    </div>
+                                    <div>
+                                        <h6 class="p-t-10">Alexander Pierce</h6>
+                                        alexander@paper.com
+                                    </div>
+                                    <a href="#" class="btn btn-success btn-sm mt-3">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 my-3">
+                            <div class="card no-b">
+                                <div class="card-body text-center p-5">
+                                    <div class="avatar avatar-xl mb-3">
+                                        <img  src="assets/img/dummy/u6.png" alt="User Image">
+                                    </div>
+                                    <div>
+                                        <h6 class="p-t-10">Alexander Pierce</h6>
+                                        alexander@paper.com
+                                    </div>
+                                    <a href="#" class="btn btn-success btn-sm mt-3">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 my-3">
+                            <div class="card no-b">
+                                <div class="card-body text-center p-5">
+                                    <div class="avatar avatar-xl mb-3">
+                                        <img  src="assets/img/dummy/u7.png" alt="User Image">
+                                    </div>
+                                    <div>
+                                        <h6 class="p-t-10">Alexander Pierce</h6>
+                                        alexander@paper.com
+                                    </div>
+                                    <a href="#" class="btn btn-success btn-sm mt-3">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 my-3">
+                            <div class="card no-b">
+                                <div class="card-body text-center p-5">
+                                    <div class="avatar avatar-xl mb-3">
+                                        <img  src="assets/img/dummy/u8.png" alt="User Image">
+                                    </div>
+                                    <div>
+                                        <h6 class="p-t-10">Alexander Pierce</h6>
+                                        alexander@paper.com
+                                    </div>
+                                    <a href="#" class="btn btn-success btn-sm mt-3">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 my-3">
+                            <div class="card no-b">
+                                <div class="card-body text-center p-5">
+                                    <div class="avatar avatar-xl mb-3">
+                                        <img  src="assets/img/dummy/u9.png" alt="User Image">
+                                    </div>
+                                    <div>
+                                        <h6 class="p-t-10">Alexander Pierce</h6>
+                                        alexander@paper.com
+                                    </div>
+                                    <a href="#" class="btn btn-success btn-sm mt-3">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 my-3">
+                            <div class="card no-b">
+                                <div class="card-body text-center p-5">
+                                    <div class="avatar avatar-xl mb-3">
+                                        <img  src="assets/img/dummy/u9.png" alt="User Image">
+                                    </div>
+                                    <div>
+                                        <h6 class="p-t-10">Alexander Pierce</h6>
+                                        alexander@paper.com
+                                    </div>
+                                    <a href="#" class="btn btn-success btn-sm mt-3">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 my-3">
+                            <div class="card no-b">
+                                <div class="card-body text-center p-5">
+                                    <div class="avatar avatar-xl mb-3">
+                                        <img  src="assets/img/dummy/u10.png" alt="User Image">
+                                    </div>
+                                    <div>
+                                        <h6 class="p-t-10">Alexander Pierce</h6>
+                                        alexander@paper.com
+                                    </div>
+                                    <a href="#" class="btn btn-success btn-sm mt-3">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 my-3">
+                            <div class="card no-b">
+                                <div class="card-body text-center p-5">
+                                    <div class="avatar avatar-xl mb-3">
+                                        <img  src="assets/img/dummy/u11.png" alt="User Image">
+                                    </div>
+                                    <div>
+                                        <h6 class="p-t-10">Alexander Pierce</h6>
+                                        alexander@paper.com
+                                    </div>
+                                    <a href="#" class="btn btn-success btn-sm mt-3">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 my-3">
+                            <div class="card no-b">
+                                <div class="card-body text-center p-5">
+                                    <div class="avatar avatar-xl mb-3">
+                                        <img  src="assets/img/dummy/u12.png" alt="User Image">
+                                    </div>
+                                    <div>
+                                        <h6 class="p-t-10">Alexander Pierce</h6>
+                                        alexander@paper.com
+                                    </div>
+                                    <a href="#" class="btn btn-success btn-sm mt-3">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane animated " id="v-pills-sellers" role="tabpanel" aria-labelledby="v-pills-sellers-tab">
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <span class="avatar-letter avatar-letter-a avatar-lg  circle"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Alexander Pierce</strong>
+                                        </div>
+                                        <small> alexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <span class="avatar-letter avatar-letter-c avatar-lg  circle"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <img  src="assets/img/dummy/u1.png" alt="User Image">
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <img  src="assets/img/dummy/u4.png" alt="User Image">
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <img  src="assets/img/dummy/u1.png" alt="User Image">
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <img  src="assets/img/dummy/u4.png" alt="User Image">
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <span class="avatar-letter avatar-letter-a avatar-lg  circle"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Alexander Pierce</strong>
+                                        </div>
+                                        <small> alexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <span class="avatar-letter avatar-letter-c avatar-lg  circle"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <span class="avatar-letter avatar-letter-a avatar-lg  circle"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Alexander Pierce</strong>
+                                        </div>
+                                        <small> alexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <span class="avatar-letter avatar-letter-c avatar-lg  circle"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <img  src="assets/img/dummy/u1.png" alt="User Image">
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <img  src="assets/img/dummy/u4.png" alt="User Image">
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <img  src="assets/img/dummy/u1.png" alt="User Image">
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <img  src="assets/img/dummy/u4.png" alt="User Image">
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <span class="avatar-letter avatar-letter-a avatar-lg  circle"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Alexander Pierce</strong>
+                                        </div>
+                                        <small> alexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <span class="avatar-letter avatar-letter-c avatar-lg  circle"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <span class="avatar-letter avatar-letter-a avatar-lg  circle"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Alexander Pierce</strong>
+                                        </div>
+                                        <small> alexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <span class="avatar-letter avatar-letter-c avatar-lg  circle"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <img  src="assets/img/dummy/u1.png" alt="User Image">
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <img  src="assets/img/dummy/u4.png" alt="User Image">
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <img  src="assets/img/dummy/u1.png" alt="User Image">
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <img  src="assets/img/dummy/u4.png" alt="User Image">
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <span class="avatar-letter avatar-letter-a avatar-lg  circle"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Alexander Pierce</strong>
+                                        </div>
+                                        <small> alexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <span class="avatar-letter avatar-letter-c avatar-lg  circle"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <span class="avatar-letter avatar-letter-a avatar-lg  circle"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Alexander Pierce</strong>
+                                        </div>
+                                        <small> alexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <span class="avatar-letter avatar-letter-c avatar-lg  circle"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <img  src="assets/img/dummy/u1.png" alt="User Image">
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <img  src="assets/img/dummy/u4.png" alt="User Image">
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <img  src="assets/img/dummy/u1.png" alt="User Image">
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <img  src="assets/img/dummy/u4.png" alt="User Image">
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <span class="avatar-letter avatar-letter-a avatar-lg  circle"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Alexander Pierce</strong>
+                                        </div>
+                                        <small> alexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card no-b p-3">
+                                <div>
+                                    <div class="image mr-3 avatar-lg float-left">
+                                        <span class="avatar-letter avatar-letter-c avatar-lg  circle"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <div>
+                                            <strong>Clexander Pierce</strong>
+                                        </div>
+                                        <small>clexander@paper.com</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="assets/img/basic/favicon.ico" type="image/x-icon"> -->
+    <title>Paper</title>
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="assets/css/app.css"> -->
+    <style>
+        .loader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #F5F8FA;
+            z-index: 9998;
+            text-align: center;
+        }
+
+        .plane-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+
+   
+  </head>
+<body class="light">
+<!-- Pre loader -->
+<div id="loader">
+
+</div> 
+<div id="app">
+<div class="page parallel">
+    <div class="d-flex row ">
+        <div class="col-md-4 white align-middle custom-col-md-4" >
+
+        </div>
+        <div class="col-md-8 white " id="custom-white" >
+                
+                <div class="p-5 mt-5">
+                        <img src="assets/img/basic/ingram-logo.png" alt=""/>
+                    </div>
+            <div class="p-5 col-md-6" >
+                  
+                <h3>Welcome Back</h3>
+                <p>Login to continue</p>
+                <form action="index.html">
+                    <div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                        <input type="text" class="form-control form-control-lg"
+                               placeholder="Email Address">
+                    </div>
+                    <div class="form-group has-icon"><i class="icon-user-secret"></i>
+                        <input type="text" class="form-control form-control-lg"
+                               placeholder="Password">
+                    </div>
+                    <input type="button" (click) = "Dashboard()" class="btn btn-primary btn-lg btn-block custom-btn" value="Log In">
+                    <a href="/dashboard" class="custom-a">
+                        <input type="button"  class="btn btn-primary btn-lg btn-block " value="Log In">
+                    </a>
+                </form>
+            </div> 
+        </div>
+        <div class="height-full blue accent-3 align-self-center text-center" data-bg-repeat="false"
+             data-bg-possition="center"
+             style="background: url('assets/img/icon/icon-plane.png') #FFEFE4">
+        </div>
+    </div>
+</div>
+<div class="control-sidebar-bg shadow white fixed"></div>
+</div>
+<!--/#app -->
+<script src="assets/js/app.js"></script>
+
+
+
+</body>
+</html>
+

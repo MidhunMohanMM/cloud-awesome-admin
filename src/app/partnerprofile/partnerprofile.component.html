@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <style>
+        .loader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #F5F8FA;
+            z-index: 9998;
+            text-align: center;
+        }
+
+        .plane-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+    
+   </head>
+<body class="light">
+
+<div id="loader" >
+</div>
+<div id="app">
+    <app-sidebar></app-sidebar>
+
+    <div class="page  has-sidebar-left height-full">
+        <header class="blue accent-3 relative">
+            <div class="container-fluid text-white">
+                <div class="row p-t-b-10 ">
+                    <div class="col">
+                        <h4>
+                            <i class="icon-home2"></i>
+                            Summary
+                        </h4>
+                    </div>
+                </div>
+                <div class="row justify-content-between">
+                    <ul class="nav nav-material nav-material-white responsive-tab" id="v-pills-tab" role="tablist">
+                        <li>
+                            <a class="nav-link " id="v-pills-all-tab" data-toggle="pill" href="#v-pills-all"
+                               role="tab" aria-controls="v-pills-all"><i class="icon icon-home2"></i>Partner Summary</a>
+                        </li>
+                        <li>
+                            <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+                               aria-controls="v-pills-profile"><i class="icon icon-face"></i> Profile</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" id="v-pills-contacts-tab" data-toggle="pill" href="#v-pills-contacts" role="tab"
+                               aria-controls="v-pills-contacts"><i class="icon  icon-contacts"></i> Contacts</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" id="v-pills-sellers-tab" data-toggle="pill" href="#v-pills-sellers" role="tab"
+                               aria-controls="v-pills-sellers"><i class="icon  icon-cloud"></i> Cloud Awesomeness</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" id="v-pills-sellers-tab" data-toggle="pill" href="#v-pills-sellers" role="tab"
+                               aria-controls="v-pills-sellers"><i class="icon  icon-business_center"></i> Business Plan</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" id="v-pills-sellers-tab" data-toggle="pill" href="#v-pills-sellers" role="tab"
+                               aria-controls="v-pills-sellers"><i class="icon  icon-user"></i>Leads</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" id="v-pills-sellers-tab" data-toggle="pill" href="#v-pills-sellers" role="tab"
+                                aria-controls="v-pills-sellers"><i class="icon icon-tasks"></i>Task</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="container-fluid animatedParent animateOnce">
+            <div class="tab-content my-3" id="v-pills-tabContent">
+                <div class="tab-pane animated" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">
+                    <div class="row my-3">
+                        <div class="col-md-12">
+                            <div class="card r-0 shadow">
+                                <div class="container-fluid my-3">
+                                    <div class="row pb-3">
+                                        <div class="col-md-12">
+                                            <div class="card no-b p-3">
+                                                <div class="card-title">
+                                                    <h4>Profile Completed</h4>
+                                                </div>
+                                                <progress-bar [progress]="80" [color]="'#488aff'"></progress-bar>
+                                                <!-- <easy-pie-chart [percent]="percent" [options]="options"></easy-pie-chart> -->
+                                            </div>
+                                        </div>
+                                    </div>       
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card ">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><i class="icon icon-mobile text-primary"></i><strong class="s-12">Phone</strong> <span class="float-right s-12">+91 333470 456 99</span></li>
+                                    <li class="list-group-item"><i class="icon icon-mail text-success"></i><strong class="s-12">Email</strong> <span class="float-right s-12">abc@paper.com</span></li>
+                                    <li class="list-group-item"><i class="icon icon-address-card-o text-warning"></i><strong class="s-12">Address</strong> <span class="float-right s-12">New York, USA</span></li>
+                                    <li class="list-group-item"><i class="icon icon-web text-danger"></i> <strong class="s-12">Website</strong> <span class="float-right s-12">pappertemplate.com</span></li>
+                                </ul>
+                            </div>
+                            <div class="card mt-3 mb-3">
+                                <div class="card-header bg-white">
+                                    <strong class="card-title">Guardian</strong>
+    
+                                </div>
+                                <ul class="no-b">
+                                    <li class="list-group-item">
+                                        <a href="">
+                                            <div class="image mr-3  float-left">
+                                                <img class="user_avatar" src="assets/img/dummy/u3.png" alt="User Image">
+                                            </div>
+                                            <h6 class="p-t-10">Alexander Pierce</h6>
+                                            <span><i class="icon-mobile-phone"></i>+92 333470963</span>
+                                        </a>
+                                    </li>
+                                </ul>
+    
+                                <div class="card-header bg-white">
+                                    <strong class="card-title">Siblings</strong>
+                                </div>
+                                <div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <div class="image mr-3  float-left">
+                                                <img class="user_avatar" src="assets/img/dummy/u1.png" alt="User Image">
+                                            </div>
+                                            <h6 class="p-t-10">Alexander Pierce</h6>
+                                            <span> 4th Grade</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="image mr-3  float-left">
+                                                <img class="user_avatar" src="assets/img/dummy/u2.png" alt="User Image">
+                                            </div>
+                                            <h6 class="p-t-10">Alexander Pierce</h6>
+                                            <span> 5th Grade</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="image mr-3  float-left">
+                                                <img class="user_avatar" src="assets/img/dummy/u5.png" alt="User Image">
+                                            </div>
+                                            <h6 class="p-t-10">Alexander Pierce</h6>
+                                            <span> 6th Grade</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="image mr-3  float-left">
+                                                <img class="user_avatar" src="assets/img/dummy/u4.png" alt="User Image">
+                                            </div>
+                                            <h6 class="p-t-10">Alexander Pierce</h6>
+                                            <span> 10th Grade</span>
+                                        </li>
+                                    </ul>
+                                </div>
+    
+                            </div>
+    
+                        </div>
+                        <div class="col-md-9">
+                            
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="card r-3">
+                                        <div class="p-4">
+                                            <div class="float-right">
+                                                <span class="icon-award text-light-blue s-48"></span>
+                                            </div>
+                                            <div class="counter-title">Class Position</div>
+                                            <h5 class="sc-counter mt-3">5th</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card r-3">
+                                        <div class="p-4">
+                                            <div class="float-right"><span class="icon-stop-watch3 s-48"></span>
+                                            </div>
+                                            <div class="counter-title ">Absence</div>
+                                            <h5 class="sc-counter mt-3">12</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="white card">
+                                        <div class="p-4">
+                                            <div class="float-right"><span class="icon-orders s-48"></span>
+                                            </div>
+                                            <div class="counter-title">Roll Number</div>
+                                            <h5 class="sc-counter mt-3">26</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="row my-3">
+                                <!-- bar charts group -->
+                                <!-- <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header white">
+                                            <h6>Attendance <small>Sessions</small></h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div id="graphx" style="width:100%; height:300px;" ></div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- /bar charts group -->
+    
+    
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header white">
+                                            <h6>New Followers <span class="badge badge-success r-3">30+</span></h6>
+                                        </div>
+                                        <div class="card-body">
+    
+                                            <ul class="list-inline mt-3">
+                                                <li class="list-inline-item ">
+                                                    <img src="assets/img/dummy/u13.png" alt="" class="img-responsive w-40px circle mb-3">
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <img src="assets/img/dummy/u12.png" alt="" class="img-responsive w-40px circle mb-3">
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <img src="assets/img/dummy/u11.png" alt="" class="img-responsive w-40px circle mb-3">
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <img src="assets/img/dummy/u10.png" alt="" class="img-responsive w-40px circle mb-3">
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <img src="assets/img/dummy/u9.png" alt="" class="img-responsive w-40px circle mb-3">
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <img src="assets/img/dummy/u8.png" alt="" class="img-responsive w-40px circle mb-3">
+                                                </li>
+                                                <li class="list-inline-item ">
+                                                    <img src="assets/img/dummy/u7.png" alt="" class="img-responsive w-40px circle mb-3">
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <img src="assets/img/dummy/u6.png" alt="" class="img-responsive w-40px circle mb-3">
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <img src="assets/img/dummy/u5.png" alt="" class="img-responsive w-40px circle mb-3">
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <img src="assets/img/dummy/u4.png" alt="" class="img-responsive w-40px circle mb-3">
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <img src="assets/img/dummy/u3.png" alt="" class="img-responsive w-40px circle mb-3">
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <img src="assets/img/dummy/u2.png" alt="" class="img-responsive w-40px circle mb-3">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-contacts" role="tabpanel" aria-labelledby="v-pills-contacts-tab">
+                    <div class="row">
+                        <div class="col-md-12">   
+                            <div class="container-fluid  my-3">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header white">
+                                                <i class="icon-clipboard-edit blue-text"></i>
+                                                <strong> CONTACTS </strong>
+                                            </div>
+                                            <div class="card-body pt-0 bg-light slimScroll" data-height="350">
+                                                <ul class="list-unstyled">
+                                                    <!-- Alphabet with number of contacts -->
+                                                    <li class="pt-3 pb-3 bg-light sticky">
+                                                        <strong>A</strong>
+                                                        <span class="badge r-3 badge-success float-right">20</span>
+                                                    </li>
+                                                    <!-- Single contact -->
+                                                    <li class="my-1">
+                                                        <div class="card no-b p-3">
+                                                            <div class="">
+                                                                <div class="float-right">
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-primary r-5">
+                                                                        <i class="icon-mail-envelope-closed2 p-0"></i>
+                                                                    </a>
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-success r-5">
+                                                                        <i class="icon-star p-0"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="image mr-3  float-left">
+                                                                    <img class="w-40px" src="assets/img/dummy/u1.png" alt="User Image">
+                                                                </div>
+                                                                <div>
+                                                                    <div>
+                                                                        <strong>Alexander Pierce</strong>
+                                                                    </div>
+                                                                    <small> alexander@paper.com</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="my-1">
+                                                        <div class="card no-b p-3">
+                                                            <div class="">
+                                                                <div class="float-right">
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-primary r-5">
+                                                                        <i class="icon-mail-envelope-closed2 p-0"></i>
+                                                                    </a>
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-success r-5">
+                                                                        <i class="icon-star p-0"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="image mr-3  float-left">
+                                                                    <img class="w-40px" src="assets/img/dummy/u6.png" alt="User Image">
+                                                                </div>
+                                                                <div>
+                                                                    <div>
+                                                                        <strong>Alexander Pierce</strong>
+                                                                    </div>
+                                                                    <small> alexander@paper.com</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="my-1">
+                                                        <div class="card no-b p-3">
+                                                            <div class="">
+                                                                <div class="float-right">
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-primary r-5">
+                                                                        <i class="icon-mail-envelope-closed2 p-0"></i>
+                                                                    </a>
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-success r-5">
+                                                                        <i class="icon-star p-0"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="image mr-3  float-left">
+                                                                    <img class="w-40px" src="assets/img/dummy/u6.png" alt="User Image">
+                                                                </div>
+                                                                <div>
+                                                                    <div>
+                                                                        <strong>Alexander Pierce</strong>
+                                                                    </div>
+                                                                    <small> alexander@paper.com</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <ul class="list-unstyled">
+                                                    <li class="pt-3 pb-3 bg-light sticky">
+                                                        <strong>B</strong>
+                                                        <span class="badge r-3 badge-danger float-right">20</span>
+                                                    </li>
+                                                    <li class="my-1">
+                                                        <div class="card no-b p-3">
+                                                            <div class="">
+                                                                <div class="float-right">
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-primary r-5">
+                                                                        <i class="icon-mail-envelope-closed2 p-0"></i>
+                                                                    </a>
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-success r-5">
+                                                                        <i class="icon-star p-0"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="image mr-3  float-left">
+                                                                    <img class="w-40px" src="assets/img/dummy/u2.png" alt="User Image">
+                                                                </div>
+                                                                <div>
+                                                                    <div>
+                                                                        <strong>Alexander Pierce</strong>
+                                                                    </div>
+                                                                    <small> alexander@paper.com</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="my-1">
+                                                        <div class="card no-b p-3">
+                                                            <div class="">
+                                                                <div class="float-right">
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-primary r-5">
+                                                                        <i class="icon-mail-envelope-closed2 p-0"></i>
+                                                                    </a>
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-success r-5">
+                                                                        <i class="icon-star p-0"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="image mr-3  float-left">
+                                                                    <img class="w-40px" src="assets/img/dummy/u3.png" alt="User Image">
+                                                                </div>
+                                                                <div>
+                                                                    <div>
+                                                                        <strong>Alexander Pierce</strong>
+                                                                    </div>
+                                                                    <small> alexander@paper.com</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="my-1">
+                                                        <div class="card no-b p-3">
+                                                            <div class="">
+                                                                <div class="float-right">
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-primary r-5">
+                                                                        <i class="icon-mail-envelope-closed2 p-0"></i>
+                                                                    </a>
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-success r-5">
+                                                                        <i class="icon-star p-0"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="image mr-3  float-left">
+                                                                    <img class="w-40px" src="assets/img/dummy/u4.png" alt="User Image">
+                                                                </div>
+                                                                <div>
+                                                                    <div>
+                                                                        <strong>Alexander Pierce</strong>
+                                                                    </div>
+                                                                    <small> alexander@paper.com</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <ul class="list-unstyled">
+                                                    <!-- Alphabet with number of contacts -->
+                                                    <li class="pt-3 pb-3 bg-light sticky">
+                                                        <strong>C</strong>
+                                                        <span class="badge r-3 badge-success float-right">20</span>
+                                                    </li>
+                                                    <!-- Single contact -->
+                                                    <li class="my-1">
+                                                        <div class="card no-b p-3">
+                                                            <div class="">
+                                                                <div class="float-right">
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-primary r-5">
+                                                                        <i class="icon-mail-envelope-closed2 p-0"></i>
+                                                                    </a>
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-success r-5">
+                                                                        <i class="icon-star p-0"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="image mr-3  float-left">
+                                                                    <img class="w-40px" src="assets/img/dummy/u1.png" alt="User Image">
+                                                                </div>
+                                                                <div>
+                                                                    <div>
+                                                                        <strong>Alexander Pierce</strong>
+                                                                    </div>
+                                                                    <small> alexander@paper.com</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="my-1">
+                                                        <div class="card no-b p-3">
+                                                            <div class="">
+                                                                <div class="float-right">
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-primary r-5">
+                                                                        <i class="icon-mail-envelope-closed2 p-0"></i>
+                                                                    </a>
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-success r-5">
+                                                                        <i class="icon-star p-0"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="image mr-3  float-left">
+                                                                    <img class="w-40px" src="assets/img/dummy/u6.png" alt="User Image">
+                                                                </div>
+                                                                <div>
+                                                                    <div>
+                                                                        <strong>Alexander Pierce</strong>
+                                                                    </div>
+                                                                    <small> alexander@paper.com</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="my-1">
+                                                        <div class="card no-b p-3">
+                                                            <div class="">
+                                                                <div class="float-right">
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-primary r-5">
+                                                                        <i class="icon-mail-envelope-closed2 p-0"></i>
+                                                                    </a>
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-success r-5">
+                                                                        <i class="icon-star p-0"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="image mr-3  float-left">
+                                                                    <img class="w-40px" src="assets/img/dummy/u6.png" alt="User Image">
+                                                                </div>
+                                                                <div>
+                                                                    <div>
+                                                                        <strong>Alexander Pierce</strong>
+                                                                    </div>
+                                                                    <small> alexander@paper.com</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="my-4">
+                                                        <strong>B</strong>
+                                                        <span class="badge r-3 badge-danger float-right">20</span>
+                                                    </li>
+                                                    <li class="my-1">
+                                                        <div class="card no-b p-3">
+                                                            <div class="">
+                                                                <div class="float-right">
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-primary r-5">
+                                                                        <i class="icon-mail-envelope-closed2 p-0"></i>
+                                                                    </a>
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-success r-5">
+                                                                        <i class="icon-star p-0"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="image mr-3  float-left">
+                                                                    <img class="w-40px" src="assets/img/dummy/u2.png" alt="User Image">
+                                                                </div>
+                                                                <div>
+                                                                    <div>
+                                                                        <strong>Alexander Pierce</strong>
+                                                                    </div>
+                                                                    <small> alexander@paper.com</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="my-1">
+                                                        <div class="card no-b p-3">
+                                                            <div class="">
+                                                                <div class="float-right">
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-primary r-5">
+                                                                        <i class="icon-mail-envelope-closed2 p-0"></i>
+                                                                    </a>
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-success r-5">
+                                                                        <i class="icon-star p-0"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="image mr-3  float-left">
+                                                                    <img class="w-40px" src="assets/img/dummy/u3.png" alt="User Image">
+                                                                </div>
+                                                                <div>
+                                                                    <div>
+                                                                        <strong>Alexander Pierce</strong>
+                                                                    </div>
+                                                                    <small> alexander@paper.com</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="my-1">
+                                                        <div class="card no-b p-3">
+                                                            <div class="">
+                                                                <div class="float-right">
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-primary r-5">
+                                                                        <i class="icon-mail-envelope-closed2 p-0"></i>
+                                                                    </a>
+                                                                    <a href="#" class="btn-fab btn-fab-sm btn-success r-5">
+                                                                        <i class="icon-star p-0"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="image mr-3  float-left">
+                                                                    <img class="w-40px" src="assets/img/dummy/u4.png" alt="User Image">
+                                                                </div>
+                                                                <div>
+                                                                    <div>
+                                                                        <strong>Alexander Pierce</strong>
+                                                                    </div>
+                                                                    <small> alexander@paper.com</small>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="card-footer white">
+                                                300 Contacts
+                                                <a href="#" class="btn btn-sm btn-danger float-right">Add New Contact</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="assets/img/basic/favicon.ico" type="image/x-icon"> -->
+    <title>Paper</title>
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="../assets/css/app.css"> -->
+    <style>
+        .loader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #F5F8FA;
+            z-index: 9998;
+            text-align: center;
+        }
+
+        .plane-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+ </head>
+<body class="light">
+<!-- Pre loader -->
+<div id="loader" >
+
+</div>
+<div id="app">
+<app-sidebar></app-sidebar>
+<!--Sidebar End-->
+
+<div class="page has-sidebar-left  height-full">
+    <header class="blue accent-3 relative">
+        <div class="container-fluid text-white">
+            <div class="row p-t-b-10 ">
+                <div class="col">
+                    <h4>
+                        <i class="icon-flag7"></i>
+                        Add Region
+                    </h4>
+                </div>
+            </div>
+ 
+        </div>
+    </header>
+
+    
+
+    
+    <div class="container-fluid animatedParent animateOnce">
+        <div class="animated ">
+            <div class="row my-3">
+                <div class="col-md-12 ">
+                    <form action="#">
+                        <div class="card no-b  no-r">
+                            <div class="card-body">
+                                <h5 class="card-title">Region</h5>
+                                <form class="form-material">
+                                    <!-- Input -->
+                                    <div class="body">
+                                        <div class="row clearfix">
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <div class="form-line" >
+                                                        <input type="text" class="form-control" name="name" [(ngModel)]="regionname" placeholder="Region Name"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>   
+                                    
+                                    <!-- Region Allocation -->
+                                    <div >
+                                        <h5 class="card-title">Region Allocation</h5>
+                                        <div class="col-md-4 custom-col-md-4">  
+                                
+                                            <!-- <ng-multiselect-dropdown 
+                                            [placeholder]="'Select regions'"
+                                            [data]="regions"
+                                            [(ngModel)]="region"
+                                            name="something"
+                                            [settings]="dropdownSettings"
+                                            (onSelect)="onItemSelect($event)"
+                                            (onSelectAll)="onSelectAll($event)"
+                                            >
+                                            </ng-multiselect-dropdown> -->
+
+                                            <ng-multiselect-dropdown 
+                                            [placeholder]="'Select countries'"
+                                            [data]="dropdownList"
+                                            [(ngModel)]="cntries"
+                                            name="something1"
+                                            [settings]="dropdownSettings"
+                                            (onSelect)="onItemSelect($event)"
+                                            (onSelectAll)="onSelectAll($event)"
+                                            >
+                                            </ng-multiselect-dropdown>
+                                        </div>
+                                    </div>
+
+                                    <!-- Coregion allocation -->
+                                    <div *ngFor="let reg of region">
+                                        <div class="pt-3" *ngIf="reg.item_text=='Asia'">
+                                            <h5 class="card-title">Asian Co-Region Allocation</h5>
+                                            <div class="col-md-4 custom-col-md-4">  
+                                    
+                                                <ng-multiselect-dropdown 
+                                                [placeholder]="'Select Asian Co-Regions'"
+                                                [data]="asia"
+                                                [(ngModel)]="coregionAsia"
+                                                name="something1"
+                                                [settings]="dropdownSettings"
+                                                (onSelect)="onItemSelect($event)"
+                                                (onSelectAll)="onSelectAll($event)"
+                                                >
+                                                </ng-multiselect-dropdown>
+                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngFor="let reg of region">
+                                        <div class="pt-3" *ngIf="reg.item_text=='Africa'">
+                                            <h5 class="card-title">African Co-Region Allocation</h5>
+                                            <div class="col-md-4 custom-col-md-4">  
+                                    
+                                                <ng-multiselect-dropdown 
+                                                [placeholder]="'Select African Co-Regions'"
+                                                [data]="africa"
+                                                [(ngModel)]="coregionAfrica"
+                                                name="something2"
+                                                [settings]="dropdownSettings"
+                                                (onSelect)="onItemSelect($event)"
+                                                (onSelectAll)="onSelectAll($event)"
+                                                >
+                                                </ng-multiselect-dropdown>
+                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngFor="let reg of region">
+                                        <div class="pt-3" *ngIf="reg.item_text=='Europe'">
+                                            <h5 class="card-title">European Co-Region Allocation</h5>
+                                            <div class="col-md-4 custom-col-md-4"> 
+                                    
+                                                <ng-multiselect-dropdown 
+                                                    [placeholder]="'Select European Co-Regions'"
+                                                    [data]="europe"
+                                                    [(ngModel)]="coregionEurope"
+                                                    name="something3"
+                                                    [settings]="dropdownSettings"
+                                                    (onSelect)="onItemSelect($event)"
+                                                    (onSelectAll)="onSelectAll($event)"
+                                                >
+                                                </ng-multiselect-dropdown>
+                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngFor="let reg of region">
+                                        <div class="pt-3" *ngIf="reg.item_text=='Americas'">
+                                            <h5 class="card-title">Americas Co-Region Allocation</h5>
+                                            <div class="col-md-4 custom-col-md-4"> 
+                                    
+                                                <ng-multiselect-dropdown 
+                                                    [placeholder]="'Select Americas Co-Regions'"
+                                                    [data]="americas"
+                                                    [(ngModel)]="coregionAmericas"
+                                                    name="something4"
+                                                    [settings]="dropdownSettings"
+                                                    (onSelect)="onItemSelect($event)"
+                                                    (onSelectAll)="onSelectAll($event)"
+                                                >
+                                                </ng-multiselect-dropdown>
+                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngFor="let reg of region">
+                                        <div class="pt-3" *ngIf="reg.item_text=='Oceania'">
+                                            <h5 class="card-title">Oceania Co-Region Allocation</h5>
+                                            <div class="col-md-4 custom-col-md-4"> 
+                                    
+                                                <ng-multiselect-dropdown 
+                                                    [placeholder]="'Select Oceania Co-Regions'"
+                                                    [data]="oceania"
+                                                    [(ngModel)]="coregionOceania"
+                                                    name="something5"
+                                                    [settings]="dropdownSettings"
+                                                    (onSelect)="onItemSelect($event)"
+                                                    (onSelectAll)="onSelectAll($event)"
+                                                >
+                                                </ng-multiselect-dropdown>
+                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Asian Countries allocation -->
+
+                                    <div *ngFor="let reg of coregionAsia">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Southern Asia' && regCont.item_text=='Asia' ">
+                                                <h5 class="card-title">Southern Asian Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Southern Asian Countries'"
+                                                        [data]="southasiacountry"
+                                                        [(ngModel)]="SouthAsiaSelect"
+                                                        name="something7"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngFor="let reg of coregionAsia">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Western Asia' && regCont.item_text=='Asia' ">
+                                                <h5 class="card-title">Western Asian Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Western Asian Countries'"
+                                                        [data]="westasiacountry"
+                                                        [(ngModel)]="WestAsiaSelect"
+                                                        name="something8"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngFor="let reg of coregionAsia">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Eastern Asia' && regCont.item_text=='Asia' ">
+                                                <h5 class="card-title">Eastern Asian Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Eastern Asian Countries'"
+                                                        [data]="eastasiacountry"
+                                                        [(ngModel)]="EastAsiaSelect"
+                                                        name="something9"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngFor="let reg of coregionAsia">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Central Asia' && regCont.item_text=='Asia'">
+                                                <h5 class="card-title">Central Asian Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Central Asian Countries'"
+                                                        [data]="centralasiacountry"
+                                                        [(ngModel)]="CentralAsiaSelect"
+                                                        name="something10"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>      
+                                    
+                                    <!-- African Countries allocation -->
+
+                                    <div *ngFor="let reg of coregionAfrica">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Southern Africa' && regCont.item_text=='Africa'">
+                                                <h5 class="card-title">Southern Africa Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Southern Africa Countries'"
+                                                        [data]="southafricacountry"
+                                                        [(ngModel)]="SouthAfricaSelect"
+                                                        name="something11"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngFor="let reg of coregionAfrica">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Western Africa' && regCont.item_text=='Africa'">
+                                                <h5 class="card-title">Western Africa Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Western Africa Countries'"
+                                                        [data]="westafricacountry"
+                                                        [(ngModel)]="WestAfricaSelect"
+                                                        name="something12"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div *ngFor="let reg of coregionAfrica">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Eastern Africa' && regCont.item_text=='Africa'">
+                                                <h5 class="card-title">Eastern Africa Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Eastern Africa Countries'"
+                                                        [data]="eastafricacountry"
+                                                        [(ngModel)]="EastAfricaSelect"
+                                                        name="something13"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngFor="let reg of coregionAfrica">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Middle Africa'  && regCont.item_text=='Africa'">
+                                                <h5 class="card-title">Middle Africa Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Middle Africa Countries'"
+                                                        [data]="middleafricacountry"
+                                                        [(ngModel)]="MiddleAfricaSelect"
+                                                        name="something14"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngFor="let reg of coregionAfrica">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Northern Africa'  && regCont.item_text=='Africa'">
+                                                <h5 class="card-title">Northern Africa Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Northern Africa Countries'"
+                                                        [data]="northafricacountry"
+                                                        [(ngModel)]="NorthernAfricaSelect"
+                                                        name="something15"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Europe Countries allocation -->
+
+                                    <div *ngFor="let reg of coregionEurope">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Southern Europe'  && regCont.item_text=='Europe'">
+                                                <h5 class="card-title">Southern Europe Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Southern Europe Countries'"
+                                                        [data]="southeuropecountry"
+                                                        [(ngModel)]="SouthEuropeSelect"
+                                                        name="something16"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngFor="let reg of coregionEurope">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Western Europe'  && regCont.item_text=='Europe'">
+                                                <h5 class="card-title">Western Europe Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Western Europe Countries'"
+                                                        [data]="westeuropecountry"
+                                                        [(ngModel)]="WestEuropeSelect"
+                                                        name="something17"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngFor="let reg of coregionEurope">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Eastern Europe' && regCont.item_text=='Europe'">
+                                                <h5 class="card-title">Eastern Europe Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Eastern Europe Countries'"
+                                                        [data]="easteuropecountry"
+                                                        [(ngModel)]="EastEuropeSelect"
+                                                        name="something18"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngFor="let reg of coregionEurope">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Northern Europe' && regCont.item_text=='Europe'">
+                                                <h5 class="card-title">Northern Europe Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Northern Europe Countries'"
+                                                        [data]="northeuropecountry"
+                                                        [(ngModel)]="NorthEuropeSelect"
+                                                        name="something19"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- American Countries Allocation -->
+
+                                    <div *ngFor="let reg of coregionAmericas">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Caribbean' && regCont.item_text=='Americas'">
+                                                <h5 class="card-title">Caribbean Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Caribbean Countries'"
+                                                        [data]="caribbeancountry"
+                                                        [(ngModel)]="CaribbeanSelect"
+                                                        name="something20"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngFor="let reg of coregionAmericas">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Central America' && regCont.item_text=='Americas'">
+                                                <h5 class="card-title">Central America Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Central America Countries'"
+                                                        [data]="centralamericacountry"
+                                                        [(ngModel)]="CentralAmericaSelect"
+                                                        name="something21"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngFor="let reg of coregionAmericas">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='South America' && regCont.item_text=='Americas'">
+                                                <h5 class="card-title">South America Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select South America Countries'"
+                                                        [data]="southamericacountry"
+                                                        [(ngModel)]="SouthAmericaSelect"
+                                                        name="something22"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngFor="let reg of coregionAmericas">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Northern America'  && regCont.item_text=='Americas'">
+                                                <h5 class="card-title">Northern America Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Northern America Countries'"
+                                                        [data]="northamericacountry"
+                                                        [(ngModel)]="NorthAmericaSelect"
+                                                        name="something23"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Oceania Countries Allocation -->
+
+                                    <div *ngFor="let reg of coregionOceania">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Australia and New Zealand'  && regCont.item_text=='Oceania'">
+                                                <h5 class="card-title">Australia and New Zealand Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Australia and New Zealand Countries'"
+                                                        [data]="ozandnzcountry"
+                                                        [(ngModel)]="OsandNZSelect"
+                                                        name="something24"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngFor="let reg of coregionOceania">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Micronesia'   && regCont.item_text=='Oceania'">
+                                                <h5 class="card-title">Micronesia Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Micronesia Countries'"
+                                                        [data]="micronesiacountry"
+                                                        [(ngModel)]="MicronesiaSelect"
+                                                        name="something25"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngFor="let reg of coregionOceania">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Polynesia'  && regCont.item_text=='Oceania'">
+                                                <h5 class="card-title">Polynesia Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Polynesia Countries'"
+                                                        [data]="polynesiacountry"
+                                                        [(ngModel)]="PolynesiaSelect"
+                                                        name="something26"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div *ngFor="let reg of coregionOceania">
+                                        <div *ngFor="let regCont of region">
+                                            <div class="pt-3" *ngIf="reg.item_text=='Melanesia'  && regCont.item_text=='Oceania'">
+                                                <h5 class="card-title">Melanesia Countries Allocation</h5>
+                                                <div class="col-md-4 custom-col-md-4"> 
+                                        
+                                                    <ng-multiselect-dropdown 
+                                                        [placeholder]="'Select Melanesia Countries'"
+                                                        [data]="melanesiacountry"
+                                                        [(ngModel)]="MelanesiaSelect"
+                                                        name="something27"
+                                                        [settings]="dropdownSettings"
+                                                        (onSelect)="onItemSelect($event)"
+                                                        (onSelectAll)="onSelectAll($event)"
+                                                    >
+                                                    </ng-multiselect-dropdown>
+                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </form>
+                            </div>
+                            <div class="card-body custom-card-body">
+                                <button type="submit" (click)= "addregion()" class="btn btn-primary btn-lg"><i class="icon-save mr-2"></i>Save Data</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+    </div>
+</div>
+<div class="control-sidebar-bg shadow white fixed"></div>
+</div>
+<!--/#app -->
+<script src="assets/js/app.js"></script>
+
+
+</body>
+</html>

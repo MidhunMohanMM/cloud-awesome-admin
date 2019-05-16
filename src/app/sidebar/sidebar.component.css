@@ -1,0 +1,23 @@
+@media only screen and (max-width: 1035px) {
+    .custom-sidebar-menu-web{
+        display:none;
+    }
+}
+@media only screen and (min-width: 1036px) {
+    .custom-sidebar-menu-mobile{
+        display:none;
+    }
+}
+
+
+#custom-span{
+    padding-left:4px;
+}
+
+.custom-icon-user{
+    padding-left:17px!important;
+}
+
+.custom-a{
+    cursor: pointer;
+}

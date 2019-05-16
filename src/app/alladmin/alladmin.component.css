@@ -1,0 +1,52 @@
+#custom-custom-control{
+    padding-top:4px;
+}
+
+.custom-th-checkbox{
+    width: 30px;
+}
+
+@media only screen and (max-width: 1035px) {
+    .custom-nav-link-web{
+        display: none;
+    }
+    .custom-btn-fab-web{
+        display: none;
+    }
+    .custom-col-md-4-web{
+        display: none;
+    }
+    .custom-a-web{
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    .custom-btn-web{
+        display: none;
+    }
+}    
+@media only screen and (min-width: 768px) {
+    .custom-btn-mobile{
+        display: none;
+    }
+}
+
+
+
+
+@media only screen and (min-width: 1035px) {
+    .custom-nav-link-mobile{
+        display: none;
+    }
+    .custom-btn-fab-mobile{
+        display: none;
+    }
+    .custom-a-mobile{
+        display: none;
+    }
+}
+
+
+

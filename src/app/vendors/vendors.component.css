@@ -1,0 +1,71 @@
+@media only screen and (max-width: 1035px) {
+    .custom-a-web{
+        display: none;
+    }
+}
+
+
+@media only screen and (min-width: 1035px) {
+    .custom-a-mobile{
+        display: none;
+    }
+}
+
+#custom-firstname{
+    margin-top:10px;
+}
+
+#custom-custom-control{
+    padding-top:4px;
+}
+
+.custom-th-checkbox{
+    width: 30px;
+}
+
+tr{
+    cursor: pointer;
+}
+
+td{
+    outline: 0!important;
+    cursor: pointer;
+}
+
+.checkSingle{
+    cursor: pointer!important;
+}
+
+.custom-col-md-4{
+    padding-left:0px;
+    padding-right: 0px;
+}
+
+/* .custom-file-label::after{
+    top:1px;
+} */
+
+.custom-col-sm-4{
+    padding-right: 0px;
+}
+
+.custom-font{
+    font-weight:300!important;
+}
+
+.custom-form-material{
+    margin-top:30px;
+}
+
+.custom-custom-file-label{
+    padding-top: 9px;
+}
+
+.custom-material-switch{
+    margin-top:32px;padding-left:0px;padding-right:0px;
+}
+
+.custom-float-left{
+    padding-left:0px;
+    margin-right: 26px;
+}

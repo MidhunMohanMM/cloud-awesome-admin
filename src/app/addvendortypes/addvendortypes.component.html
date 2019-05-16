@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Paper</title>
+    <style>
+        .loader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #F5F8FA;
+            z-index: 9998;
+            text-align: center;
+        }
+
+        .plane-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+</head>
+<body class="light">
+<!-- Pre loader -->
+<div id="loader">
+
+</div>
+<div id="app">
+
+<!--Sidebar-->
+
+<app-sidebar></app-sidebar>
+
+<!-- Content begins -->
+<div class="page has-sidebar-left  height-full">
+    <header class="blue accent-3 relative">
+        <div class="container-fluid text-white">
+            <div class="row p-t-b-10 ">
+                <div class="col">
+                    <h4>
+                        <i class="icon-database"></i> Vendor Type
+                    </h4>
+                </div>
+            </div>
+            <div class="row justify-content-between">
+                <ul class="nav nav-material nav-material-white responsive-tab" id="v-pills-tab" role="tablist">
+                    <li>
+                        <a class="nav-link active"  id="v-pills-all-tab" data-toggle="pill" href="#v-pills-all"
+                        role="tab" aria-controls="v-pills-all"><i class="icon icon-home2"></i>All Vendor Types</a>
+                        <!-- <a class="nav-link " id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+                        aria-controls="v-pills-profile"><i class="icon icon-home2"></i>All Vendor Types</a> -->
+                    </li>
+                    <li>
+                        <a class="nav-link "  id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+                        aria-controls="v-pills-profile" ><i class="icon icon-plus-circle"></i> Add New Vendor Type</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </header>
+    <div class="container-fluid animatedParent animateOnce">
+    <div class="tab-content my-3" id="v-pills-tabContent">
+    <div class="tab-pane animated show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">
+        <div >
+            <div class="row my-3">
+                <div class="col-md-12 ">
+                    <form action="#">
+                        <div class="card no-b  no-r">
+                            <div class="card-body">
+                                <h5 class="card-title">All Vendor Types</h5>
+                                <form class="form-material">
+                                    <!-- Input -->
+                                    <div class="body">
+                                        <div style="margin-top:25px;">
+                                        <!-- <ngx-datatable class="bootstrap" style="overflow: scroll"
+                                            [rows]="vendortyperows"
+                                            [columns]="vendortypecolumns">
+                                        </ngx-datatable> -->
+                                        <table class="table " [mfData]="allvendortypes" #mf="mfDataTable" [mfRowsOnPage]="5">
+                                            <thead>
+                                            <tr>
+                                                <!-- <th style="width: 20%">
+                                                    <mfDefaultSorter by="i">Number</mfDefaultSorter>
+                                                </th> -->
+                                                <th style="width: 50%"> 
+                                                    <mfDefaultSorter by="name">Vendor Type Name <i style="margin-left:10px;" class="s-15 icon-sort_by_alpha"></i></mfDefaultSorter>
+                                                    
+                                                </th>
+                                                <th style="width: 30%">
+                                                    <mfDefaultSorter by="status">Status <i style="margin-left:10px;" class="s-15 icon-sort_by_alpha"></i></mfDefaultSorter>
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr *ngFor="let item of mf.data;  index as i">
+                                                <!-- <td>{{ i+1 }}</td> -->
+                                                <td> {{item.name}} </td>
+                                                <!-- <td> {{item.status}} </td> -->
+                                                <td *ngIf="item.status == '0'" >
+                                                <!-- <ul class="nav navbar-nav">
+                                                    <li class="dropdown custom-dropdown messages-menu">
+                                                        <a href="#" class="nav-link" data-toggle="dropdown">
+                                                        <span class="badge badge-primary">Not Approved</span>
+                                                            </a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li class="custom-li">
+                                                                        <span class="badge badge-success">Approved</span>
+                                                                        </li>
+                                                                        <li class="custom-li">
+                                                                                <span class="badge badge-primary">Not Approved</span>
+                                                                        </li>
+                                                                        <li class="custom-li">
+                                                                                <span class="badge badge-warning">Pending</span>
+                                                                        </li>
+                                                                        <li class="custom-li">
+                                                                                <span class="badge badge-danger">Rejected</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        
+                                                        </ul> -->
+                                                    <span class="badge badge-primary">Not Approved</span>
+                                                </td>
+                                                <td *ngIf="item.status == '1'" >
+                                                    <span class="badge badge-success">Approved</span>
+                                                </td>
+                                                <td *ngIf="item.status == '2'" >
+                                                    <span class="badge badge-warning">Pending</span>
+                                                </td>
+                                                <td *ngIf="item.status == '3'" >
+                                                    <span class="badge badge-danger">Rejected</span>
+                                                </td>
+                                                <!-- <td>{{item.city | uppercase}}</td> -->
+                                            </tr>
+                                            </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+                                                </td>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    </div>
+
+                                </form> 
+                            </div>
+
+                            <!-- To add new Admin -->
+                            <div class="card-body">
+                                <button type="submit" class="btn btn-primary btn-lg"><i class="icon-save mr-2"></i>Save Data</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+            <div class="animated ">
+                    <div class="row my-3">
+                        <div class="col-md-12 ">
+                            <form action="#">
+                                <div class="card no-b  no-r">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Add Vendor Type</h5>
+                                        <form class="form-material">
+                                            <!-- Input -->
+                                            <div class="body">
+                                                <div class="row clearfix">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <div class="form-line" >
+                                                                <input type="text" [(ngModel)] = "vendortypename" class="form-control" name="vendortypename" placeholder="Vendor Type"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form> 
+                                    </div>
+        
+                                    <!-- To add new Admin -->
+                                    <div class="card-body">
+                                        <button type="submit" (click)="addvendortype()" class="btn btn-primary btn-lg"><i class="icon-save mr-2"></i>Save Data</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<!-- Right Sidebar -->
+
+<div class="control-sidebar-bg shadow white fixed"></div>
+</div>
+<!--/#app -->
+<script src="assets/js/app.js"></script>
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,28 @@
+/* @import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/bootstrap.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css'; */
+
+@media only screen and (max-width: 1035px) {
+    .custom-nav-link-web{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1035px) {
+    .custom-nav-link-mobile{
+        display: none;
+    }
+}
+
+.custom-col-md-4{
+    padding-left:0px
+}
+
+#custom-permission{
+    font-weight: 300;margin-bottom: .75rem;
+}
+
+.custom-li{
+    margin-bottom: 10px;
+}
+

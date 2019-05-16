@@ -1,0 +1,40 @@
+.custom-col-sm-10{
+    background: white;
+    padding-right:0px;
+    padding-left:0px;
+    margin-left:15px;
+    margin-bottom: 1rem;
+}
+
+.custom-col-md-2{
+    margin-bottom:0px;
+    padding-right: 0px;
+    padding-left: 40px;
+}
+
+.custom-col-md-12{
+    padding-top:12px;
+}
+
+.custom-image{
+    margin-top:12px;
+}
+
+.custom-badge{
+    margin-left:10px;
+}
+
+.custom-col-md-4{
+    padding-left: 0px;
+}
+
+.custom-control-label{
+    padding-left:0px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    box-shadow: 0 0 0 30px white inset !important;
+}
